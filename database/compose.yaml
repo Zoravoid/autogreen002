@@ -1,25 +1,25 @@
-version: 'version'
+
 services:
   db_user:
     container_name: autogreen_userdb
-    image: postgres:latest
+    image: postgres:17
+    volumes:
+      - userdb:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: autogreen1234
       POSTGRES_DB: userdb
-    volumes:
-      - userdb:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   db_sensor: 
     container_name: autogreen_sensordb
-    image: postgres:latest
+    image: postgres:17
+    volumes:
+      - sensordb:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: autogreen1234
       POSTGRES_DB: sensordb
-    volumes:
-      - sensordb:/var/lib/postgresql/data
     ports:
       - "5431:5432"
   db_timescale:
