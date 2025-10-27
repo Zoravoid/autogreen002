@@ -5,7 +5,7 @@ metadata:
   labels:
     app: autogreen
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: autogreen
@@ -15,10 +15,50 @@ spec:
         app: autogreen
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: sensordb
+        image: postgres:17
         ports:
         - containerPort: 80
+        resources:
+          requests: 
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      - name: userdb
+        image: postgres:17
+        ports:
+        - containerPort: 81
+        resources:
+          requests: 
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      - name: timescaledb
+        image: timescale/timescaledb-ha:pg17
+        ports:
+        - containerPort: 82
+        resources:
+          requests: 
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+      - name: autogreen-frontend
+        image: zoravoid/autogreen:01
+        ports:
+        - containerPort: 83
+        resources:
+          requests: 
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
 
 #apply deployment
 #kubectl apply -fautogreen-deployment.yaml
