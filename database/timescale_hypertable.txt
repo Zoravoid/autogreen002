@@ -1,0 +1,68 @@
+-- Create a hypertable, with the columnstore from the hypercore engine
+-- "time" as partitioning column and a segment by on location
+CREATE TABLE conditions (
+  time        TIMESTAMPTZ       NOT NULL,
+  location    TEXT              NOT NULL,
+  temperature DOUBLE PRECISION  NULL,
+  humidity    DOUBLE PRECISION  NULL
+)
+WITH (
+  timescaledb.hypertable,
+  timescaledb.partition_column='time',
+  timescaledb.segmentby='location'
+);
+
+--Insert data into a hypertable named conditions
+
+INSERT INTO conditions
+  VALUES
+    (NOW(), 'office',   70.0, 50.0),
+    (NOW(), 'basement', 66.5, 60.0),
+    (NOW(), 'garage',   77.0, 65.2);
+
+--Return entry data from the last 12 hours
+
+SELECT
+  COUNT(*)
+FROM
+  conditions
+WHERE
+  time > NOW() - INTERVAL '12 hours';
+
+--Create time buckets
+
+SELECT
+  time_bucket('1 day', time) AS bucket,
+  AVG(temperature) AS avg_temp
+FROM
+  conditions
+GROUP BY
+  bucket
+ORDER BY
+  bucket ASC;
+
+--Create Materialized view
+
+CREATE MATERIALIZED VIEW conditions_summary_daily
+WITH (timescaledb.continuous) AS
+SELECT
+  location,
+  time_bucket(INTERVAL '1 day', time) AS bucket,
+  AVG(temperature),
+  MAX(temperature),
+  MIN(temperature)
+FROM
+  conditions
+GROUP BY
+  location,
+  bucket;
+
+-- Create a policy to refresh the view every hour:
+
+SELECT
+  add_continuous_aggregate_policy(
+    'conditions_summary_daily',
+    start_offset => INTERVAL '1 month',
+    end_offset => INTERVAL '1 day',
+    schedule_interval => INTERVAL '1 hour'
+);
