@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autogreen-frontend-deployment
+  labels:
+    app: autogreenfront
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autogreenfront
+  template:
+    metadata:
+      labels:
+        app: autogreenfront
+    spec:
+      containers:
+      - name: autogreen-frontend
+        image: zoravoid/autogreen:01
+        ports:
+        - containerPort: 3000
+        env:
+        - name: SENSOR_USER
+          valueFrom:
+            secretKeyRef:
+              name: sensordb-secret
+              key: sensordb-user
+        - name: SENSOR_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sensordb-secret
+              key: sensordb-password
+        - name: SENSOR_URL
+          valueFrom:
+            configMapKeyRef:
+              name: sensordb-config
+              key: sensordb-service
+        - name: USER_USER
+          valueFrom:
+            secretKeyRef:
+              name: userdb-secret
+              key: userdb-user
+        - name: USER_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: userdb-secret
+              key: userdb-password
+        - name: USER_URL
+          valueFrom:
+            configMapKeyRef:
+              name: userdb-config
+              key: userdb-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autogreenfront-service
+spec:
+  type: NodePort
+  selector:
+    app: autogreenfront
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    NodePort: 30000
