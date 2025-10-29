@@ -1,0 +1,8 @@
+.header {
+  height: 100%; 
+  width: 160px; 
+  position: fixed; 
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 20px;
+}
