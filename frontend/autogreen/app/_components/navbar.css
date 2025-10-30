@@ -1,18 +1,20 @@
 .sidenav {
   height: 100%; 
-  width: 160px; 
+  width: 180px; 
+  padding-top: 75;
   position: fixed; 
   z-index: 1;
-  top: 0; 
+  bottom: 0; 
   left: 0;
   overflow-x: hidden; 
-  padding-top: 20px;
+  background-color: #363636;
+  color: #F6F6F6;
 }
 
 .sidenav a {
-  padding: 6px 8px 6px 16px;
+  padding: 6px 8px 20px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: medium;
   display: block;
 }
 

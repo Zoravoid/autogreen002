@@ -3,10 +3,10 @@ import "./navbar.css";
 
 const Navbar = () => {
     return <div className="sidenav">
-        <a href="/CameraFeed">CameraFeed</a>
-        <a href="/EnergyInfo">EnergyInfo</a>
-        <a href="/PlantState">PlantState</a>
-        <a href="/SensorData">SensorData</a>
+        <a href="/CameraFeed">Camera Feed</a>
+        <a href="/EnergyInfo">Energy Info</a>
+        <a href="/PlantState">Plant State</a>
+        <a href="/SensorData">Sensor Data</a>
     </div>;
 };
 
