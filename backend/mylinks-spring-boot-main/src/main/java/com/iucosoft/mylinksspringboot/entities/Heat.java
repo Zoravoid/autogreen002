@@ -1,0 +1,34 @@
+package com.iucosoft.mylinksspringboot.entities;
+
+import com.iucosoft.mylinksspringboot.model.AuditModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Data
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "heat")
+public class Heat extends AuditModel implements Serializable {
+
+    @Id
+    @Column(name = "device_id", unique = false, nullable = false)
+    private Long device_id;
+
+    @Column(name = "heat_val", nullable = false, length = 20)
+    private Float heat_val;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "time_stamp", nullable = false, length = 10)
+    private Date time_stamp;
+
+}

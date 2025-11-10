@@ -209,6 +209,13 @@ INSERT INTO `users` VALUES (1,'2025-04-10 09:39:27.000000','2025-04-10 09:39:27.
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
+LOCK TABLES `heat` WRITE;
+/*!40000 ALTER TABLE `heat` DISABLE KEYS */;
+INSERT INTO `heat` VALUES (1,1.101,'2025-04-10 09:39:27.000000'),
+                          (2,49.309, '2025-04-10 09:39:27.000000');
+/*!40000 ALTER TABLE `heat` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Dumping data for table `userstatus_users`
 --
