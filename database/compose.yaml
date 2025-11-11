@@ -1,4 +1,3 @@
-
 services:
   db_user:
     container_name: autogreen_userdb
@@ -33,8 +32,19 @@ services:
       - "5433:5432"
     # docker exec -it timescaledb psql -d "postgres://postgres:password@localhost/postgres"
     # to connect to postgres use above command
+  db_MySQL:
+    container_name: test_mysql
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: autogreen1234
+    ports:
+      - "3306:3306"
 
 volumes:
   userdb: {}
   sensordb: {}
   timescaledb: {}
+
+
+#docker exec -it autogreen-userdb psql -U postgres
+#docker run -d --name timescaledb -p 5433:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb-ha:pg17
