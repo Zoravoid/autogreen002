@@ -8,6 +8,8 @@ import com.iucosoft.mylinksspringboot.mappers.HeatMapper;
 import com.iucosoft.mylinksspringboot.repositories.HeatRepository;
 import com.iucosoft.mylinksspringboot.service.HeatService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +32,13 @@ public class HeatServiceImpl extends AbstractServiceImpl<Heat, Long> implements 
         return heatRepository;
     }
 
+
+    @Override
+    public Page<Heat> getHeatByDeviceId(Long deviceId, Pageable pageable) {
+        return heatRepository.getHeatByDeviceId(deviceId, pageable);
+    }
+
+
     @Override
     public HeatDTO listHeatValues(HeatDTO heatDTO, Long device_id){
         if (Objects.isNull(device_id)) {
@@ -38,7 +47,7 @@ public class HeatServiceImpl extends AbstractServiceImpl<Heat, Long> implements 
         Heat heat = heatRepository.findById(device_id)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
-        heat.setDevice_id(heatDTO.getDevice_id());
+        heat.setDeviceId(heatDTO.getDevice_id());
         heat.setHeat_val(heatDTO.getHeat_val());
         heat.setTime_stamp(heatDTO.getTime_stamp());
         Heat listedHeatValues = heatRepository.save(heat);

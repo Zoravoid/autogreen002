@@ -21,8 +21,12 @@ import static javax.persistence.GenerationType.IDENTITY;
 public class Heat extends AuditModel implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
+
     @Column(name = "device_id", unique = false, nullable = false)
-    private Long device_id;
+    private Long deviceId;
 
     @Column(name = "heat_val", nullable = false, length = 20)
     private Float heat_val;

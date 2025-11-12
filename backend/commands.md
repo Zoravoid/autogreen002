@@ -14,3 +14,20 @@ Access Swagger for API testing:
 Look into User/API Get List of Users
 
 Look into Group/API Get Members by group ID
+
+For more sensor add java classes like this:
+- entity
+- repository
+- service
+- serviceimpl
+- mapper
+- dto
+- api
+- apiimpl
+
+Sensors to do:
+- co2
+- humidity
+- moisture
+- ph
+- light 

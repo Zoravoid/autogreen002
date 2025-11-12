@@ -25,12 +25,19 @@ public class HeatApiImpl extends AbstractExceptionHandler implements HeatApi{
         this.heatService = heatService;
     }
 
+
+    @Override
+    public ResponseEntity<Page<HeatDTO>> getHeatByDeviceId(Long deviceId, final Pageable pageable){
+        final Page<HeatDTO> heats = heatService.getHeatByDeviceId(deviceId, pageable).map(heat -> heatMapper.toDto(heat));
+        return ResponseEntity.ok().body(heats);
+    }
+
+
     @Override
     public ResponseEntity<Page<HeatDTO>> getListOfAllHeatValues(Pageable pageable) {
 
-        final Page<Heat> heats = heatService.findAllPaginated(pageable);
-        final Page<HeatDTO> heatDto = heats.map(heatMapper::toDto);
-        return ResponseEntity.ok().body(heatDto);
+        Page<Heat> pageHeat = heatService.findAllPaginated(pageable);
+        return ResponseEntity.ok().body(pageHeat.map(heatMapper::toDto));
     }
 
 }
