@@ -1,6 +1,6 @@
 'use client';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import data from './data.json'
+import data from "../_jsonfiles/data.json"
 
 
 export default function TestChart() {

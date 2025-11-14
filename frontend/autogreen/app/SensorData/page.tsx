@@ -1,5 +1,5 @@
-import TestChart from "./_components/testchart";
-import TestChart2 from "./_components/testchart2";
+import TestChart from "../_components/_charts/testchart";
+import TestChart2 from "../_components/_charts/testchart2";
 
 export default function SensorData() {
   return (
