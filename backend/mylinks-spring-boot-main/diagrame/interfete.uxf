@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>295</x>
+      <y>110</y>
+      <w>100</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>GenericDaoIntf
+-
+E init();
+K save(E entity);
+E findById(K key);
+void update(E entity);
+void saveOrUpdate(E entity);
+void delete(K key);
+List&lt;E&gt; list();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>225</y>
+      <w>100</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>CommonLinksCategoryDaoIntf
+--
++nameCategory: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>270</y>
+      <w>110</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>UserLinksCategory
+--
+-id: int
+-name: String
+--
+-dateCreated(): date
+-lastaccessed(): date
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>195</x>
+      <y>270</y>
+      <w>140</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>+LogInUserDaoIntf
+--
+-getUsersAccessedBetween(Date1, Date2)
+-dateCreatedAccount(): date
+-lastAccessed(): date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>275</x>
+      <y>350</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Role
+-
+-id: int
+-name: String
+-setOfPermissions: Set&lt;Permission&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>365</x>
+      <y>270</y>
+      <w>80</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>+UserGroupDaoIntf
+--
+-dateCreated(): date
+-onlineUsers(): integer
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>270</y>
+      <w>90</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>+AdminDaoIntf
+--
+-findUsersByID()
+-findUsersByName()
+-findUsersByNameAndPassword()
+-lastAccessed: DateTime
+-CRUD Users</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>270</y>
+      <w>85</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Permission
+-
+-id: int
+-resource: String
+-type: String(read,write)
+--
+CRUD methods()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>195</y>
+      <w>65</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>+MyLinkDaoIntf
+--
+-dateLinkAdded()
+-dateLinkEdited()
+-lastAccessed()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>415</y>
+      <w>170</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>StatisticsUtil
+-
+contor()users tha have
+recently created account
+
+contor() users that have 
+create account 3 months ago
+
+contor() online users
+
+contor() new created chats</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>95</x>
+      <y>185</y>
+      <w>245</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>470.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>185</y>
+      <w>210</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>400.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>255</x>
+      <y>185</y>
+      <w>85</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>150.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>335</x>
+      <y>185</y>
+      <w>40</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>185</y>
+      <w>75</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>185</y>
+      <w>155</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;290.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>390</x>
+      <y>175</y>
+      <w>210</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>170</y>
+      <w>265</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+extends</panel_attributes>
+    <additional_attributes>10.0;10.0;510.0;120.0</additional_attributes>
+  </element>
+</diagram>
