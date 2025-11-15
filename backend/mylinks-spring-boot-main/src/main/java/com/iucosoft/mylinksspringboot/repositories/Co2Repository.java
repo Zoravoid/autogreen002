@@ -1,6 +1,6 @@
 package com.iucosoft.mylinksspringboot.repositories;
 
-import com.iucosoft.mylinksspringboot.entities.Heat;
+import com.iucosoft.mylinksspringboot.entities.Co2;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface HeatRepository extends JpaRepository<Heat, Long> {
+public interface Co2Repository extends JpaRepository<Co2, Long>{
 
-    @Query("Select h FROM Heat h WHERE h.deviceId = :deviceId")
-    Page<Heat> getHeatByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
+    @Query("Select co FROM Co2 co WHERE co.deviceId = :deviceId")
+    Page<Co2> getCo2ByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
 
 }

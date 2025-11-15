@@ -10,8 +10,7 @@ import java.util.List;
 
 public interface HeatService extends OperationIntf<Heat, Long> {
 
-    HeatDTO listHeatValues(HeatDTO heatDTO, Long device_id);
-
+    HeatDTO listHeatValues(HeatDTO heatDTO, Long deviceId);
 
     Page<Heat> getHeatByDeviceId(final Long deviceId, final Pageable pageable);
 

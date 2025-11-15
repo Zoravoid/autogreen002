@@ -4,11 +4,11 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class HeatDTO {
+public class HumidityDTO {
 
     private Long deviceId;
 
-    private Float heat_val;
+    private Float humidity_val;
 
     private Date time_stamp;
 

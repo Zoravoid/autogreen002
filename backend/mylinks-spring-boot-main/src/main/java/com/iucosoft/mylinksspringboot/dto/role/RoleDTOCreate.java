@@ -19,4 +19,5 @@ public class RoleDTOCreate {
     private String title;
 
     private List<PermissionDTO> permissionsDTOs;
+
 }

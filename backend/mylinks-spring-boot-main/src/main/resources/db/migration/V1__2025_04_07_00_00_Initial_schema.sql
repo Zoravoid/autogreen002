@@ -419,16 +419,70 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Sensors
+--
+
+-- Temperature
+
 DROP TABLE IF EXISTS `heat`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `heat` (
-    `divice_id` bigint NOT NULL,
-    `val` float NOT NULL,
+    `id` bigint NOT NULL,
+    `device_id` bigint NOT NULL,
+    `heat_val` float NOT NULL,
     `time_stamp` datetime(6) NOT NULL,
-    PRIMARY KEY (`divice_id`)
+    `created_date` datetime(6) NOT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+-- Co2
+
+DROP TABLE IF EXISTS `co2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `co2` (
+    `id` bigint NOT NULL,
+    `device_id` bigint NOT NULL,
+    `co2_val` float NOT NULL,
+    `time_stamp` datetime(6) NOT NULL,
+    `created_date` datetime(6) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- Humidity
+
+DROP TABLE IF EXISTS `humidity`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `humidity` (
+    `id` bigint NOT NULL,
+    `device_id` bigint NOT NULL,
+    `humidity_val` float NOT NULL,
+    `time_stamp` datetime(6) NOT NULL,
+    `created_date` datetime(6) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+-- Moisture
+
+DROP TABLE IF EXISTS `moisture`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `moisture` (
+    `id` bigint NOT NULL,
+    `device_id` bigint NOT NULL,
+    `moisture_val` float NOT NULL,
+    `time_stamp` datetime(6) NOT NULL,
+    `created_date` datetime(6) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Table structure for table `userstatus_users`

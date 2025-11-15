@@ -1,6 +1,6 @@
 package com.iucosoft.mylinksspringboot.repositories;
 
-import com.iucosoft.mylinksspringboot.entities.Heat;
+import com.iucosoft.mylinksspringboot.entities.Moisture;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,9 +12,9 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface HeatRepository extends JpaRepository<Heat, Long> {
+public interface MoistureRepository extends JpaRepository<Moisture, Long> {
 
-    @Query("Select h FROM Heat h WHERE h.deviceId = :deviceId")
-    Page<Heat> getHeatByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
+    @Query("Select mo FROM Humidity mo WHERE mo.deviceId = :deviceId")
+    Page<Moisture> getMoistureByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
 
 }

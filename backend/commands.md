@@ -29,5 +29,3 @@ Sensors to do:
 - co2
 - humidity
 - moisture
-- ph
-- light 

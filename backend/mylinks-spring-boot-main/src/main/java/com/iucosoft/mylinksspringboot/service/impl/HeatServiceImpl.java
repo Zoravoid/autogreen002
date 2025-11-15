@@ -40,14 +40,14 @@ public class HeatServiceImpl extends AbstractServiceImpl<Heat, Long> implements 
 
 
     @Override
-    public HeatDTO listHeatValues(HeatDTO heatDTO, Long device_id){
-        if (Objects.isNull(device_id)) {
+    public HeatDTO listHeatValues(HeatDTO heatDTO, Long deviceId){
+        if (Objects.isNull(deviceId)) {
             throw new BadRequestException("The device_id must not be null");
         }
-        Heat heat = heatRepository.findById(device_id)
+        Heat heat = heatRepository.findById(deviceId)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
-        heat.setDeviceId(heatDTO.getDevice_id());
+        heat.setDeviceId(heatDTO.getDeviceId());
         heat.setHeat_val(heatDTO.getHeat_val());
         heat.setTime_stamp(heatDTO.getTime_stamp());
         Heat listedHeatValues = heatRepository.save(heat);

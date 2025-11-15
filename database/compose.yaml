@@ -39,7 +39,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: autogreen1234
     ports:
-      - "3306:3306"
+      - "5434:3306"
 
 volumes:
   userdb: {}

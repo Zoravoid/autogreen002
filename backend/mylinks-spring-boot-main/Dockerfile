@@ -1,17 +1,9 @@
-FROM eclipse-temurin:1.8.0_462-jdk-alpine
+FROM eclipse-temurin:8-jdk
 
-WORKDIR /app 
-
-COPY PUT_SOMETHING ./ 
+WORKDIR /app  
 
 COPY . .
 
-ENV PORT=3000
+EXPOSE 8080
 
-EXPOSE 3000
-
-ENV HOSTNAME="0.0.0.0"
-
-ENTRYPOINT [ "" ]
-#or
-CMD [ "executable" ]
+CMD [ "java", "-jar", "/app/MyLinksSpringBootApplication.jar" ]

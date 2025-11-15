@@ -17,10 +17,7 @@ public class HeatApiImpl extends AbstractExceptionHandler implements HeatApi{
     private final HeatService heatService;
     private final HeatMapper heatMapper;
 
-    public HeatApiImpl(
-            HeatService heatService,
-            HeatMapper heatMapper
-    ) {
+    public HeatApiImpl(HeatService heatService, HeatMapper heatMapper) {
         this.heatMapper = heatMapper;
         this.heatService = heatService;
     }
