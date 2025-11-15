@@ -1,4 +1,3 @@
-
 services:
   db_user:
     container_name: autogreen_userdb
