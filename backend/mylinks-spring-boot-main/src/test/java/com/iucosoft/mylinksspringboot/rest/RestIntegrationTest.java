@@ -102,7 +102,7 @@ public class RestIntegrationTest extends IntegrationTest {
 
     protected String getAuthorizationTokenForDefaultUser() throws Exception {
         final User user = getDefaultUser();
-        final AuthRequestDTO authRequestDTO = new AuthRequestDTO(user.getUsername(), "default");
+        final AuthRequestDTO authRequestDTO = new AuthRequestDTO(user.getUsername(), user.getPassword(), null);
 
         MvcResult mvcResultAuthenticate = mockMvc.perform(postToURLWithObjectAsRequestBody("/authenticate", authRequestDTO)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -119,7 +119,7 @@ public class RestIntegrationTest extends IntegrationTest {
 
     protected String getAuthorizationTokenForAdminUser() throws Exception {
         final User user = getAdminUser();
-        final AuthRequestDTO authRequestDTO = new AuthRequestDTO(user.getUsername(), "qwerty123");
+        final AuthRequestDTO authRequestDTO = new AuthRequestDTO(user.getUsername(), user.getPassword(), null);
 
         MvcResult mvcResultAuthenticate = mockMvc.perform(postToURLWithObjectAsRequestBody("/authenticate", authRequestDTO)
                         .contentType(MediaType.APPLICATION_JSON)

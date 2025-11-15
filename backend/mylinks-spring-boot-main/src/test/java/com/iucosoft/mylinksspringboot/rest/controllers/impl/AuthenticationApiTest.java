@@ -56,7 +56,7 @@ class AuthenticationApiTest extends RestIntegrationTest {
 
     @Test
     void createAuthenticationToken_SuccessForDefaultUser() throws Exception {
-        AuthRequestDTO authRequest = new AuthRequestDTO("user1", "default");
+        AuthRequestDTO authRequest = new AuthRequestDTO("user1", "default", null);
         MvcResult mvcResult = mockMvc.perform(postToURLWithObjectAsRequestBody("/authenticate", authRequest))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -71,7 +71,7 @@ class AuthenticationApiTest extends RestIntegrationTest {
 
     @Test
     void createAuthenticationToken_SuccessForAdminUser() throws Exception {
-        AuthRequestDTO authRequest = new AuthRequestDTO("admin", "qwerty123");
+        AuthRequestDTO authRequest = new AuthRequestDTO("admin", "qwerty123", null);
         MvcResult mvcResult = mockMvc.perform(postToURLWithObjectAsRequestBody("/authenticate", authRequest))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -113,7 +113,7 @@ class AuthenticationApiTest extends RestIntegrationTest {
 
     @Test
     void createAuthenticationToken_InvalidCredentials() throws Exception {
-        AuthRequestDTO authRequest = new AuthRequestDTO("user1", "wrongPassword");
+        AuthRequestDTO authRequest = new AuthRequestDTO("user1", "wrongPassword", null);
         mockMvc.perform(postToURLWithObjectAsRequestBody("/authenticate", authRequest))
                 .andExpect(status().isUnauthorized());
     }

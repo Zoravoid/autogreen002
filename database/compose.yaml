@@ -30,8 +30,15 @@ services:
       POSTGRES_DB: timescaledb
     ports:
       - "5433:5432"
-    # docker exec -it timescaledb psql -d "postgres://postgres:password@localhost/postgres"
+    # docker exec -it timescaledb psql -d "postgres://postgres:autogreen1234@localhost/postgres" 
     # to connect to postgres use above command
+  backend:
+    container_name: autogreen_backend_test
+    image: zoravoid/autogreen-backend:01
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db_MySQL
   db_MySQL:
     container_name: test_mysql
     image: mysql:latest
