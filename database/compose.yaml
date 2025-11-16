@@ -1,26 +1,4 @@
 services:
-  db_user:
-    container_name: autogreen_userdb
-    image: postgres:17
-    volumes:
-      - userdb:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: autogreen1234
-      POSTGRES_DB: userdb
-    ports:
-      - "5432:5432"
-  db_sensor: 
-    container_name: autogreen_sensordb
-    image: postgres:17
-    volumes:
-      - sensordb:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: autogreen1234
-      POSTGRES_DB: sensordb
-    ports:
-      - "5431:5432"
   db_timescale:
     container_name: autogreen_timescaledb
     image: timescale/timescaledb-ha:pg17
@@ -32,6 +10,13 @@ services:
       - "5433:5432"
     # docker exec -it timescaledb psql -d "postgres://postgres:autogreen1234@localhost/postgres" 
     # to connect to postgres use above command
+  frontend:
+    container_name: autogreen_frontend_test
+    image: zoravoid/autogreen-frontend:01
+    ports:
+      - "3000:3000"
+    #depends_on:
+    #  - backend
   backend:
     container_name: autogreen_backend_test
     image: zoravoid/autogreen-backend:01
