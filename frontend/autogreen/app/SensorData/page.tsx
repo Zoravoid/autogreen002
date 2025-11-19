@@ -1,5 +1,6 @@
 import TestChart from "../_components/_charts/testchart";
 import TestChart2 from "../_components/_charts/testchart2";
+import ApiChart from "../_components/_charts/api_testchart";
 
 export default function SensorData() {
   return (
@@ -10,7 +11,7 @@ export default function SensorData() {
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
           
         <GridItem title="Test Chart">
-          <TestChart />
+          <ApiChart />
         </GridItem>
           
         <GridItem title="Test2 Chart">
