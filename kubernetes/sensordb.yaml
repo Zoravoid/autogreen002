@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensor-deployment
+  labels:
+    app: sensor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sensor
+  template:
+    metadata:
+      labels:
+        app: sensor
+    spec:
+      containers:
+      - name: sensordb
+        image: postgres:17
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: sensordb-secret
+              key: sensordb-user
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sensordb-secret
+              key: sensordb-password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sensordb-service
+spec:
+  selector:
+    app: sensor
+  ports:
+  - protocol: TCP
+    port: 3001
+    targetPort: 5432
