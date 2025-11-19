@@ -1,0 +1,23 @@
+.sidenav {
+  height: 100%; 
+  width: 15%; 
+  padding-top: 75;
+  position: fixed; 
+  z-index: 1;
+  bottom: 0; 
+  left: 0;
+  overflow-x: hidden; 
+  background-color: #363636;
+  color: #F6F6F6;
+}
+
+.sidenav a {
+  padding: 6px 8px 20px 16px;
+  text-decoration: none;
+  font-size: medium;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
