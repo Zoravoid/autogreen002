@@ -29,3 +29,6 @@ Sensors to do:
 - co2
 - humidity
 - moisture
+
+To build backend into Jar run:
+-  mvn clean install -DskipTests

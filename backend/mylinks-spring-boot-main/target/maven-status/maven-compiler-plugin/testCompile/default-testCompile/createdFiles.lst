@@ -1,0 +1,10 @@
+com/iucosoft/mylinksspringboot/IntegrationTest.class
+com/iucosoft/mylinksspringboot/config/TestConfig.class
+com/iucosoft/mylinksspringboot/rest/RestIntegrationTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/AuthenticationApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/CategoryApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/UserApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/PermissionApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/LinkApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/GroupApiTest.class
+com/iucosoft/mylinksspringboot/rest/controllers/impl/RoleApiTest.class
