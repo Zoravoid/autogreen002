@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface HumidityRepository extends JpaRepository<Humidity, Long> {
 
-    @Query("Select hu FROM Humidity hu WHERE hu.deviceId = :deviceId")
+    @Query("Select h FROM Humidity h WHERE h.deviceId = :deviceId")
     Page<Humidity> getHumidityByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
 
 }

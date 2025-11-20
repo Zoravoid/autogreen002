@@ -6,9 +6,14 @@ export default function ApiChart() {
 
   const [moisture, setMoisture] = useState([]);
 
+  const deviceId = 2;
+  const page = 0;
+  const size = 10;
+  const MOISTURE_URL = `http://localhost:8080/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
+
   useEffect(() => {
     async function loadData() {
-      const response = await fetch('http://localhost:8080/api/moisture?page=0&size=10');
+      const response = await fetch(MOISTURE_URL);
       const json = await response.json();
 
       setMoisture(Array.isArray(json) ? json : json.content);

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Repository
 public interface Co2Repository extends JpaRepository<Co2, Long>{
 
-    @Query("Select co FROM Co2 co WHERE co.deviceId = :deviceId")
+    @Query("Select c FROM Co2 c WHERE c.deviceId = :deviceId")
     Page<Co2> getCo2ByDeviceId(final @Param("deviceId") Long deviceId, Pageable pageable);
 
 }
