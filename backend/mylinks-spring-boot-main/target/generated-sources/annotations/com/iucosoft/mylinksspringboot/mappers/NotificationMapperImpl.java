@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-20T02:21:45+0100",
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Private Build)"
+    date = "2025-11-25T20:59:40+0100",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Temurin)"
 )
 @Component
 public class NotificationMapperImpl implements NotificationMapper {
