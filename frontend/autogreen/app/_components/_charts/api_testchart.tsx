@@ -19,6 +19,10 @@ export default function ApiChart() {
       setMoisture(Array.isArray(json) ? json : json.content);
     }
     loadData();
+
+    const interval = setInterval(() => {loadData();}, 1000);
+
+    return () => clearInterval(interval);
   }, []);
   
   return (

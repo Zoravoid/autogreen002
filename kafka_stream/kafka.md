@@ -25,3 +25,11 @@ To read your message run:
 - ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic "topic_name" --from-beginning
 
 
+# Kafka dummy data
+
+{"device_id": 1, "moisture_val": 45.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
+{"device_id": 1, "moisture_val": 55.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
+{"device_id": 1, "moisture_val": 65.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
+{"device_id": 1, "moisture_val": 75.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
+
+
