@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-25T20:59:41+0100",
+    date = "2025-11-26T18:09:17+0100",
     comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Temurin)"
 )
 @Component
@@ -22,8 +22,8 @@ public class HeatMapperImpl implements HeatMapper {
         HeatDTO heatDTO = new HeatDTO();
 
         heatDTO.setDeviceId( heat.getDeviceId() );
-        heatDTO.setHeat_val( heat.getHeat_val() );
-        heatDTO.setTime_stamp( heat.getTime_stamp() );
+        heatDTO.setHeatVal( heat.getHeatVal() );
+        heatDTO.setTimeStamp( heat.getTimeStamp() );
 
         return heatDTO;
     }
@@ -37,8 +37,8 @@ public class HeatMapperImpl implements HeatMapper {
         Heat.HeatBuilder<?, ?> heat = Heat.builder();
 
         heat.deviceId( dto.getDeviceId() );
-        heat.heat_val( dto.getHeat_val() );
-        heat.time_stamp( dto.getTime_stamp() );
+        heat.heatVal( dto.getHeatVal() );
+        heat.timeStamp( dto.getTimeStamp() );
 
         return heat.build();
     }

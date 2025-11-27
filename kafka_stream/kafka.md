@@ -24,12 +24,18 @@ Write a message and when ur done do ctrl + c
 To read your message run: 
 - ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic "topic_name" --from-beginning
 
+To check if topics exist run:
+- ./kafka-topics.sh --bootstrap-server localhost:9092 --list
+
 
 # Kafka dummy data
 
-{"device_id": 1, "moisture_val": 45.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
-{"device_id": 1, "moisture_val": 55.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
-{"device_id": 1, "moisture_val": 65.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
-{"device_id": 1, "moisture_val": 75.7, "time_stamp": "2025-11-25T14:00:00.000Z"}
+{"device_id": 1, "moisture_val": 49.309, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 2.101, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 70.101, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 4.101, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 60.101, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 7.101, "time_stamp": "2025-11-25 14:00:00.000"}
+{"device_id": 1, "moisture_val": 80.101, "time_stamp": "2025-11-25 14:00:00.000"}
 
 

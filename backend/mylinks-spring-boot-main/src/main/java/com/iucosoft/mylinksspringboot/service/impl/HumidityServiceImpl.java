@@ -43,9 +43,9 @@ public class HumidityServiceImpl extends AbstractServiceImpl<Humidity, Long> imp
         Humidity humidity = humidityRepository.findById(deviceId)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
-        humidity.setHumidity_val(humidityDTO.getHumidity_val());
+        humidity.setHumidityVal(humidityDTO.getHumidityVal());
         humidity.setDeviceId(humidityDTO.getDeviceId());
-        humidity.setTime_stamp(humidityDTO.getTime_stamp());
+        humidity.setTimeStamp(humidityDTO.getTimeStamp());
         Humidity listedHumidityValues = humidityRepository.save(humidity);
 
         return humidityMapper.toDto(listedHumidityValues);

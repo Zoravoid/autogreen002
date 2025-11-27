@@ -1,7 +1,5 @@
 package com.iucosoft.mylinksspringboot.config;
 
-
-import com.iucosoft.mylinksspringboot.entities.Moisture;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +18,7 @@ public class KafkaProducerConfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
+    @Bean
     public Map<String, Object> producerConfig() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
@@ -29,13 +28,13 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public ProducerFactory<String, Moisture> producerFactory() {
+    public ProducerFactory<String, String> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfig());
     }
 
     @Bean
-    public KafkaTemplate<String, Moisture> kafkaTemplate(ProducerFactory<String, Moisture> producerFactory) {
-        return new KafkaTemplate<>(producerFactory);
+    public KafkaTemplate<String, String> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
     }
 
 }

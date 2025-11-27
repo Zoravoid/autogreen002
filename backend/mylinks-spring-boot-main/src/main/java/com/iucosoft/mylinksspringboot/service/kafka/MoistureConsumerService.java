@@ -16,12 +16,14 @@ public class MoistureConsumerService {
     public final MoistureMapper moistureMapper;
     public final MoistureRepository moistureRepository;
     public final ObjectMapper objectMapper;
+    private final MoistureProducerService moistureProducerService;
 
     @Autowired
-    public MoistureConsumerService(MoistureRepository moistureRepository, MoistureMapper moistureMapper) {
+    public MoistureConsumerService(MoistureRepository moistureRepository, MoistureMapper moistureMapper, MoistureProducerService moistureProducerService) {
         this.moistureRepository = moistureRepository;
         this.moistureMapper = moistureMapper;
         this.objectMapper = new ObjectMapper();
+        this.moistureProducerService = moistureProducerService;
     }
 
     @Transactional
@@ -39,6 +41,8 @@ public class MoistureConsumerService {
             moistureRepository.save(moisture);
 
             System.out.println("Moisture saved: " + dto);
+
+            moistureProducerService.sendMoisture(dto);
         }
         catch (Exception e) {
             System.err.println("Failed to process moisture message: " + e.getMessage());
