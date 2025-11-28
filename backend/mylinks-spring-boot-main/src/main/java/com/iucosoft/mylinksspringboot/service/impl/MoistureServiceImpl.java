@@ -43,9 +43,9 @@ public class MoistureServiceImpl extends AbstractServiceImpl<Moisture, Long> imp
         Moisture moisture = moistureRepository.findById(deviceId)
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
-        moisture.setMoisture_val(moistureDTO.getMoisture_val());
+        moisture.setMoistureVal(moistureDTO.getMoistureVal());
         moisture.setDeviceId(moistureDTO.getDeviceId());
-        moisture.setTime_stamp(moistureDTO.getTime_stamp());
+        moisture.setTimeStamp(moistureDTO.getTimeStamp());
         Moisture listedMoistureValues = moistureRepository.save(moisture);
 
         return moistureMapper.toDto(listedMoistureValues);

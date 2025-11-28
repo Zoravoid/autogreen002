@@ -30,6 +30,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/TagRepository.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/role/RoleDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/CategoryApi.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/Co2ProducerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/HumidityService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/UserStatusMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/UserApi.java
@@ -44,11 +45,13 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/exceptions/ErrorObject.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/user/UserDTOCreate.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/PersonDetails.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/Co2ConsumerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Tag.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/PersonDetailsRepository.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/exceptions/GlobalExceptionHandler.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/HeatMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/bridge/RoleUserServiceImpl.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/HeatConsumerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/PermissionService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Role.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/AbstractExceptionHandler.java
@@ -59,6 +62,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/HeatService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/PermissionServiceImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/PersonDetailsServiceImpl.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/HumidityConsumerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Humidity.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/impl/HeatApiImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/bridge/GroupLinkRepository.java
@@ -95,6 +99,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/bridge/LinkTagService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/impl/UserApiImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/PermissionDTO.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/MoistureConsumerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/impl/AuthenticationApiImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/bridge/GroupLinkServiceImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/role/RoleDTOUpdate.java
@@ -113,15 +118,19 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/custom/CustomUserMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserSender.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/RoleService.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/HeatProducerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/UserServiceImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/RoleRepository.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/HumidityProducerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/SecurityConfig.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/LinkService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/UserStatusServiceImpl.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/KafkaProducerConfig.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/bridge/LinkCategory.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/category/CategoryUpdateDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/user/UserDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/custom/CustomCategoryMapper.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/kafka/MoistureProducerService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/HumidityMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/category/CategoryCreateDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/UserStatusService.java
@@ -131,6 +140,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/GroupService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/custom/CustomLinkMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/UserStatus.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/KafkaTopicConfig.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/controllers/impl/MoistureApiImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/OpenAPIConfig.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/Co2Repository.java
@@ -201,3 +211,4 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Permission.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Heat.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/exceptions/MyLinksRuntimeException.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/KafkaConsumerConfig.java

@@ -29,10 +29,10 @@ public class Humidity extends AuditModel implements Serializable{
     private Long deviceId;
 
     @Column(name = "humidity_val", nullable = false, length = 20)
-    private Float humidity_val;
+    private Float humidityVal;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "time_stamp", nullable = false, length = 10)
-    private Date time_stamp;
+    private Date timeStamp;
 
 }

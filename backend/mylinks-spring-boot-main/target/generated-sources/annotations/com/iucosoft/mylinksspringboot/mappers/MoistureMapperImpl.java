@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-20T02:21:45+0100",
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Private Build)"
+    date = "2025-11-28T14:38:20+0100",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_472 (Private Build)"
 )
 @Component
 public class MoistureMapperImpl implements MoistureMapper {
@@ -22,8 +22,8 @@ public class MoistureMapperImpl implements MoistureMapper {
         MoistureDTO moistureDTO = new MoistureDTO();
 
         moistureDTO.setDeviceId( moisture.getDeviceId() );
-        moistureDTO.setMoisture_val( moisture.getMoisture_val() );
-        moistureDTO.setTime_stamp( moisture.getTime_stamp() );
+        moistureDTO.setMoistureVal( moisture.getMoistureVal() );
+        moistureDTO.setTimeStamp( moisture.getTimeStamp() );
 
         return moistureDTO;
     }
@@ -37,8 +37,8 @@ public class MoistureMapperImpl implements MoistureMapper {
         Moisture.MoistureBuilder<?, ?> moisture = Moisture.builder();
 
         moisture.deviceId( dto.getDeviceId() );
-        moisture.moisture_val( dto.getMoisture_val() );
-        moisture.time_stamp( dto.getTime_stamp() );
+        moisture.moistureVal( dto.getMoistureVal() );
+        moisture.timeStamp( dto.getTimeStamp() );
 
         return moisture.build();
     }
