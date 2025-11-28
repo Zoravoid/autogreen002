@@ -48,8 +48,8 @@ public class HeatServiceImpl extends AbstractServiceImpl<Heat, Long> implements 
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
         heat.setDeviceId(heatDTO.getDeviceId());
-        heat.setHeat_val(heatDTO.getHeat_val());
-        heat.setTime_stamp(heatDTO.getTime_stamp());
+        heat.setHeatVal(heatDTO.getHeatVal());
+        heat.setTimeStamp(heatDTO.getTimeStamp());
         Heat listedHeatValues = heatRepository.save(heat);
 
         return heatMapper.toDto(listedHeatValues);

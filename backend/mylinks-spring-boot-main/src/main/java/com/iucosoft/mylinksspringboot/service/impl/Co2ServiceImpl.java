@@ -44,8 +44,8 @@ public class Co2ServiceImpl extends AbstractServiceImpl<Co2, Long> implements Co
                 .orElseThrow(() -> new ResourceNotFoundException("Could not update the values"));
 
         co2.setDeviceId(co2DTO.getDeviceId());
-        co2.setCo2_val(co2DTO.getCo2_val());
-        co2.setTime_stamp(co2.getTime_stamp());
+        co2.setCo2Val(co2DTO.getCo2Val());
+        co2.setTimeStamp(co2.getTimeStamp());
         Co2 listedCo2Values = co2Repository.save(co2);
 
         return co2Mapper.toDto(listedCo2Values);

@@ -6,7 +6,7 @@ export default function ApiChart() {
 
   const [moisture, setMoisture] = useState([]);
 
-  const deviceId = 2;
+  const deviceId = 1;
   const page = 0;
   const size = 10;
   const MOISTURE_URL = `http://localhost:8080/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
@@ -19,6 +19,10 @@ export default function ApiChart() {
       setMoisture(Array.isArray(json) ? json : json.content);
     }
     loadData();
+
+    const interval = setInterval(() => {loadData();}, 1000);
+
+    return () => clearInterval(interval);
   }, []);
   
   return (
@@ -38,7 +42,7 @@ export default function ApiChart() {
       <YAxis width="auto" dataKey="moisture_val"/>
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="moisture_val" stroke="#8884d8" activeDot={{ r: 8 }} />
+      <Line type="monotone" isAnimationActive={false } dataKey="moisture_val" stroke="#8884d8" activeDot={{ r: 8 }} />
     </LineChart>
   );
 }

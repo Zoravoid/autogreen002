@@ -11,6 +11,7 @@ com/iucosoft/mylinksspringboot/mappers/HeatMapperImpl.class
 com/iucosoft/mylinksspringboot/dto/UserStatusDTO.class
 com/iucosoft/mylinksspringboot/repositories/HeatRepository.class
 com/iucosoft/mylinksspringboot/service/LinkService.class
+com/iucosoft/mylinksspringboot/service/kafka/MoistureProducerService.class
 com/iucosoft/mylinksspringboot/dto/role/RoleDTOUpdate$RoleDTOUpdateBuilder.class
 com/iucosoft/mylinksspringboot/repositories/PermissionRepository.class
 com/iucosoft/mylinksspringboot/entities/Moisture$1.class
@@ -27,6 +28,7 @@ com/iucosoft/mylinksspringboot/entities/bridge/LinkTag$LinkTagBuilder.class
 com/iucosoft/mylinksspringboot/entities/Notification.class
 com/iucosoft/mylinksspringboot/config/OpenAPIConfig.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserSender$1.class
+com/iucosoft/mylinksspringboot/service/kafka/MoistureConsumerService.class
 com/iucosoft/mylinksspringboot/config/locale/LocaleConfiguration.class
 com/iucosoft/mylinksspringboot/entities/User.class
 com/iucosoft/mylinksspringboot/controllers/MoistureApi.class
@@ -103,6 +105,7 @@ com/iucosoft/mylinksspringboot/dto/user/UserDTO.class
 com/iucosoft/mylinksspringboot/util/SortingUtil.class
 com/iucosoft/mylinksspringboot/service/authentication/UserAuthenticationProvider.class
 com/iucosoft/mylinksspringboot/entities/bridge/RoleUser$RoleUserBuilderImpl.class
+com/iucosoft/mylinksspringboot/config/KafkaProducerConfig.class
 com/iucosoft/mylinksspringboot/dto/sensor/MoistureDTO.class
 com/iucosoft/mylinksspringboot/service/impl/Co2ServiceImpl.class
 com/iucosoft/mylinksspringboot/service/UserService.class
@@ -141,6 +144,7 @@ com/iucosoft/mylinksspringboot/repositories/bridge/CategoryOwnerRepository.class
 com/iucosoft/mylinksspringboot/entities/Link$LinkBuilder.class
 com/iucosoft/mylinksspringboot/entities/Group$1.class
 com/iucosoft/mylinksspringboot/mappers/UserMapperImpl.class
+com/iucosoft/mylinksspringboot/service/kafka/HumidityConsumerService.class
 com/iucosoft/mylinksspringboot/dto/group/GroupUpdateDTO$GroupUpdateDTOBuilder.class
 com/iucosoft/mylinksspringboot/entities/Tag$TagBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/Moisture.class
@@ -156,11 +160,13 @@ com/iucosoft/mylinksspringboot/mappers/RoleMapper.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupMember$GroupMemberBuilder.class
 com/iucosoft/mylinksspringboot/entities/Heat$HeatBuilder.class
 com/iucosoft/mylinksspringboot/controllers/UserApi.class
+com/iucosoft/mylinksspringboot/service/kafka/HumidityProducerService.class
 com/iucosoft/mylinksspringboot/entities/Permission$PermissionBuilderImpl.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/GroupCategoryServiceImpl.class
 com/iucosoft/mylinksspringboot/mappers/UserMapper.class
 com/iucosoft/mylinksspringboot/entities/bridge/PermissionRole$PermissionRoleBuilderImpl.class
 com/iucosoft/mylinksspringboot/service/PermissionService.class
+com/iucosoft/mylinksspringboot/config/KafkaConsumerConfig.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkTag.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupCategory$1.class
 com/iucosoft/mylinksspringboot/controllers/AuthenticationApi.class
@@ -183,6 +189,7 @@ com/iucosoft/mylinksspringboot/entities/Permission$PermissionBuilder.class
 com/iucosoft/mylinksspringboot/mappers/NotificationMapper.class
 com/iucosoft/mylinksspringboot/entities/Role$RoleBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupLink$GroupLinkBuilder.class
+com/iucosoft/mylinksspringboot/service/kafka/Co2ProducerService.class
 com/iucosoft/mylinksspringboot/mappers/custom/impl/CustomUserMapperImpl.class
 com/iucosoft/mylinksspringboot/mappers/Co2Mapper.class
 com/iucosoft/mylinksspringboot/service/Co2Service.class
@@ -205,6 +212,7 @@ com/iucosoft/mylinksspringboot/controllers/LinkApi.class
 com/iucosoft/mylinksspringboot/entities/Tag$TagBuilder.class
 com/iucosoft/mylinksspringboot/dto/group/GroupMembersDTO$GroupMembersDTOBuilder.class
 com/iucosoft/mylinksspringboot/repositories/MoistureRepository.class
+com/iucosoft/mylinksspringboot/config/KafkaTopicConfig.class
 com/iucosoft/mylinksspringboot/controllers/impl/HeatApiImpl.class
 com/iucosoft/mylinksspringboot/repositories/RoleRepository.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/LinkCategoryServiceImpl.class
@@ -225,6 +233,7 @@ com/iucosoft/mylinksspringboot/dto/role/PermissionRoleCreateDTO.class
 com/iucosoft/mylinksspringboot/dto/group/GroupAddMembersDTO$GroupAddMembersDTOBuilder.class
 com/iucosoft/mylinksspringboot/controllers/impl/CategoryApiImpl.class
 com/iucosoft/mylinksspringboot/service/impl/UserStatusServiceImpl.class
+com/iucosoft/mylinksspringboot/service/kafka/HeatProducerService.class
 com/iucosoft/mylinksspringboot/repositories/bridge/LinkTagRepository.class
 com/iucosoft/mylinksspringboot/entities/bridge/RoleUser.class
 com/iucosoft/mylinksspringboot/entities/User$UserBuilder.class
@@ -253,6 +262,7 @@ com/iucosoft/mylinksspringboot/config/locale/LocaleConfiguration$SmartLocaleReso
 com/iucosoft/mylinksspringboot/entities/Category$CategoryBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/Heat$1.class
 com/iucosoft/mylinksspringboot/entities/Category.class
+com/iucosoft/mylinksspringboot/service/kafka/Co2ConsumerService.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserSender$NotificationUserSenderBuilder.class
 com/iucosoft/mylinksspringboot/entities/UserStatus$UserStatusBuilder.class
 com/iucosoft/mylinksspringboot/mappers/HumidityMapper.class
@@ -269,6 +279,7 @@ com/iucosoft/mylinksspringboot/entities/Link$LinkBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkCategory$LinkCategoryBuilder.class
 com/iucosoft/mylinksspringboot/service/MoistureService.class
 com/iucosoft/mylinksspringboot/config/Constants.class
+com/iucosoft/mylinksspringboot/service/kafka/HeatConsumerService.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/CategoryOwnerServiceImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupLink$GroupLinkBuilderImpl.class
 com/iucosoft/mylinksspringboot/repositories/bridge/NotificationUserSenderRepository.class

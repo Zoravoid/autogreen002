@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-20T02:21:46+0100",
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Private Build)"
+    date = "2025-11-28T14:38:20+0100",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_472 (Private Build)"
 )
 @Component
 public class HumidityMapperImpl implements HumidityMapper {
@@ -22,8 +22,8 @@ public class HumidityMapperImpl implements HumidityMapper {
         HumidityDTO humidityDTO = new HumidityDTO();
 
         humidityDTO.setDeviceId( humidity.getDeviceId() );
-        humidityDTO.setHumidity_val( humidity.getHumidity_val() );
-        humidityDTO.setTime_stamp( humidity.getTime_stamp() );
+        humidityDTO.setHumidityVal( humidity.getHumidityVal() );
+        humidityDTO.setTimeStamp( humidity.getTimeStamp() );
 
         return humidityDTO;
     }
@@ -37,8 +37,8 @@ public class HumidityMapperImpl implements HumidityMapper {
         Humidity.HumidityBuilder<?, ?> humidity = Humidity.builder();
 
         humidity.deviceId( dto.getDeviceId() );
-        humidity.humidity_val( dto.getHumidity_val() );
-        humidity.time_stamp( dto.getTime_stamp() );
+        humidity.humidityVal( dto.getHumidityVal() );
+        humidity.timeStamp( dto.getTimeStamp() );
 
         return humidity.build();
     }

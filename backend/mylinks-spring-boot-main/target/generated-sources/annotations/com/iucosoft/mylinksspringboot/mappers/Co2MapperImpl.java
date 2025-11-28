@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-20T02:21:45+0100",
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_462 (Private Build)"
+    date = "2025-11-28T14:38:20+0100",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_472 (Private Build)"
 )
 @Component
 public class Co2MapperImpl implements Co2Mapper {
@@ -22,8 +22,8 @@ public class Co2MapperImpl implements Co2Mapper {
         Co2DTO co2DTO = new Co2DTO();
 
         co2DTO.setDeviceId( co2.getDeviceId() );
-        co2DTO.setCo2_val( co2.getCo2_val() );
-        co2DTO.setTime_stamp( co2.getTime_stamp() );
+        co2DTO.setCo2Val( co2.getCo2Val() );
+        co2DTO.setTimeStamp( co2.getTimeStamp() );
 
         return co2DTO;
     }
@@ -37,8 +37,8 @@ public class Co2MapperImpl implements Co2Mapper {
         Co2.Co2Builder<?, ?> co2 = Co2.builder();
 
         co2.deviceId( dto.getDeviceId() );
-        co2.co2_val( dto.getCo2_val() );
-        co2.time_stamp( dto.getTime_stamp() );
+        co2.co2Val( dto.getCo2Val() );
+        co2.timeStamp( dto.getTimeStamp() );
 
         return co2.build();
     }

@@ -29,10 +29,10 @@ public class Heat extends AuditModel implements Serializable {
     private Long deviceId;
 
     @Column(name = "heat_val", nullable = false, length = 20)
-    private Float heat_val;
+    private Float heatVal;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "time_stamp", nullable = false, length = 10)
-    private Date time_stamp;
+    private Date timeStamp;
 
 }
