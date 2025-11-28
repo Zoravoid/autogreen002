@@ -42,7 +42,7 @@ export default function ApiChart() {
       <YAxis width="auto" dataKey="moisture_val"/>
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="moisture_val" stroke="#8884d8" activeDot={{ r: 8 }} />
+      <Line type="monotone" isAnimationActive={false } dataKey="moisture_val" stroke="#8884d8" activeDot={{ r: 8 }} />
     </LineChart>
   );
 }
