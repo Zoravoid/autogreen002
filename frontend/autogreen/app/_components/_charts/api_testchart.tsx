@@ -10,11 +10,7 @@ const deviceId = 1;
 const page = 0;
 const size = 10;
 
-const baseUrl = typeof window !== 'undefined'
-? `http://${window.location.hostname}:8080`
-: '[http://backend:8080](http://backend:8080)';
-
-const MOISTURE_URL = `${baseUrl}/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
+const MOISTURE_URL = `http://192.168.1.72:8080/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
 
 useEffect(() => {
 async function loadData() {

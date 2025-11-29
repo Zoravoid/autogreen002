@@ -31,7 +31,7 @@ To check if topics exist run:
 # Kafka dummy data
 
 {"device_id": 1, "moisture_val": 49.309, "time_stamp": "2025-11-25 14:00:00.000"}
-{"device_id": 1, "moisture_val": 2.101, "time_stamp": "2025-11-25 15:00:00.000"}
+{"device_id": 1, "moisture_val": 2.101, "time_stamp": "2025-11-25 21:00:00.000"}
 {"device_id": 1, "moisture_val": 70.101, "time_stamp": "2025-11-25 16:00:00.000"}
 {"device_id": 1, "moisture_val": 4.101, "time_stamp": "2025-11-25 17:00:00.000"}
 {"device_id": 1, "moisture_val": 60.101, "time_stamp": "2025-11-25 18:00:00.000"}
