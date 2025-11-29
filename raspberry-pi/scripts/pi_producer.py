@@ -4,8 +4,8 @@ import requests
 import random
 from kafka import KafkaProducer
 
-print("Starting producer...")
 
+print("Starting producer...")
 try:
     producer = KafkaProducer(
         bootstrap_servers="192.168.1.72:29092",
@@ -16,22 +16,15 @@ except Exception as e:
     print("Producer FAILED to create:", e)
     raise e
 
-print("Entering loop...")
 
-while True:
-    data = {
-        "device_id": 1,
-        "moisture_val": 69.69,
-        "time_stamp": "2025-11-29 14:00:00.000"
-    }
+def send_sensor_data(sensor_type, data):
+    print("Sending: ", sensor_type, data)
 
-    print("Sending:", data)
-    future = producer.send("s_moisture", data)
+    future = producer.send(sensor_type, data)
 
     try:
         metadata = future.get(timeout=2)
         print("Message delivered:", metadata)
     except Exception as e:
         print("Delivery failed:", e)
-
-    time.sleep(1)
+    
