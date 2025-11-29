@@ -10,7 +10,6 @@ const deviceId = 1;
 const page = 0;
 const size = 10;
 
-// Dynamically choose base URL: localhost for dev, backend service for Docker, or LAN IP for other devices
 const baseUrl = typeof window !== 'undefined'
 ? `http://${window.location.hostname}:8080`
 : '[http://backend:8080](http://backend:8080)';
@@ -30,10 +29,10 @@ console.error('Failed to fetch moisture data:', err);
 }
 
 
-loadData(); // initial load
-const interval = setInterval(loadData, 1000); // refresh every 1s
+loadData(); 
+const interval = setInterval(loadData, 1000); 
 
-return () => clearInterval(interval); // cleanup
+return () => clearInterval(interval); 
 
 
 }, [MOISTURE_URL]);
