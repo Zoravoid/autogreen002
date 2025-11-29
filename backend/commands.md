@@ -32,3 +32,10 @@ Sensors to do:
 
 To build backend into Jar run:
 -  mvn clean install -DskipTests
+
+git lfs commit:
+- git lfs track "backend/mylinks-spring-boot-main/target/mylinks-spring-boot-1.0-SNAPSHOT.jar"
+- git add .gitattributes
+- git add backend/mylinks-spring-boot-main/target/mylinks-spring-boot-1.0-SNAPSHOT.jar
+- git commit -m "Add JAR via LFS"
+- git push origin backend
