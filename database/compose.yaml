@@ -17,7 +17,7 @@ services:
       - backend
   backend:
     container_name: autogreen_backend_test
-    image: zoravoid/autogreen-backend:01
+    image: zoravoid/autogreen-backend:02
     ports:
       - "8080:8080"
     depends_on:
