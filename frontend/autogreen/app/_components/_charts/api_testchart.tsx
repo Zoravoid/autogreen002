@@ -10,7 +10,7 @@ const deviceId = 1;
 const page = 0;
 const size = 10;
 
-const MOISTURE_URL = `http://lilithvoid.local:80/backend/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
+const MOISTURE_URL = `http://0.0.0.0:8080/api/moisture/${deviceId}/moistures?page=${page}&size=${size}`;
 
 useEffect(() => {
 async function loadData() {
