@@ -8,7 +8,7 @@ from kafka import KafkaProducer
 print("Starting producer...")
 try:
     producer = KafkaProducer(
-        bootstrap_servers="192.168.1.72:29092",
+        bootstrap_servers="lilithvoid.local:29092",
         value_serializer=lambda v: json.dumps(v).encode("utf-8")
     )
     print("Producer created successfully.")

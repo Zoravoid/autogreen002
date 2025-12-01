@@ -34,7 +34,7 @@ def recieve_all():
 def main():
     #This code works. Main is only for testing them. Later we need toput this in a loop
 
-    #send_all()
+    send_all()
     #recieve_all()
     print("Running main()")
 
