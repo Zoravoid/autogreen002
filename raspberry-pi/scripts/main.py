@@ -35,7 +35,7 @@ def main():
     #This code works. Main is only for testing them. Later we need toput this in a loop
 
     send_all()
-    #recieve_all()
+    recieve_all()
     print("Running main()")
 
 if __name__ == "__main__":

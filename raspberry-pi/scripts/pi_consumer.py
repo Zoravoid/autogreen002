@@ -1,23 +1,29 @@
+from kafka import KafkaConsumer
 import json
-"""from kafka import KafkaConsumer
 
-consumer = KafkaConsumer{
-    "s_moisture",
-    bootstrap_server = "localhost:9092",
-    auto_offset_reset = "earliest",
-    group_id = "groupId",
-    value_deserializer = lambda m: json.loads(m.decode("utf:8")),
-}
-"""
-#  NOT WORKING CODE ABOVE
-#  THIS SHIT IS ASS <<<
+def get_sensor_data(sensor_type: str):
+    print("starting consumer...")
+    topic_name= f"b_{sensor_type}"
+    print(f"Listening at topic: b_{sensor_type}")
 
-def get_sensor_data(sensor_type):
-    #dummy data in the format that we use
-    value_type = sensor_type+"_val"
-    data = {
-        "device_id": 1,
-        value_type: 69.69,
-        "time_stamp": "2025-11-29 14:00:00.000" 
-    }
-    return data
+    try:
+        consumer = KafkaConsumer(
+            topic_name,
+            bootstrap_servers="lilithvoid.local:29092",
+            value_deserializer=lambda m: json.loads(m.decode("utf-8")),
+            auto_offset_reset="latest",
+            enable_auto_commit=True,
+            group_id="groupId"
+        )
+        print("Consumer has connected!")
+    except Exception as e:
+        print("Connection failed:", e)
+        raise e
+
+    for msg in consumer:
+        print(f" Value: {msg.value}")
+        
+    consumer.close()
+    return msg.value
+
+    
