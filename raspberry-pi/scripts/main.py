@@ -1,5 +1,7 @@
 from pi_producer import send_sensor_data
 from pi_consumer import get_sensor_data
+from cam_stream import start_camera_streaming
+import threading
 
 sensor_types = ["moisture", "heat", "humidity", "co2"]
 current_values = dict()
@@ -32,11 +34,19 @@ def recieve_all():
         current_values = {}
 
 def main():
+
+    cam_thread = threading.Thread(target=start_camera_streaming)
+    cam_thread.daemon = True
+    cam_thread.start()
+
     #This code works. Main is only for testing them. Later we need toput this in a loop
 
     send_all()
     recieve_all()
     print("Running main()")
+
+    while True:
+        pass
 
 if __name__ == "__main__":
     main()

@@ -13,7 +13,7 @@ def get_sensor_data(sensor_type: str):
             value_deserializer=lambda m: json.loads(m.decode("utf-8")),
             auto_offset_reset="latest",
             enable_auto_commit=True,
-            group_id="groupId"
+            group_id="green_pi_01"
         )
         print("Consumer has connected!")
     except Exception as e:
