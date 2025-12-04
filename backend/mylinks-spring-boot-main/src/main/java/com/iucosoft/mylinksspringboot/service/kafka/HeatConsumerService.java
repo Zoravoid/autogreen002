@@ -27,7 +27,7 @@ public class HeatConsumerService {
     }
 
     @Transactional
-    @KafkaListener(topics = "s_heat", groupId = "groupId")
+    @KafkaListener(topics = "s_heat", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

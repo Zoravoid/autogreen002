@@ -27,7 +27,7 @@ public class Co2ConsumerService {
     }
 
     @Transactional
-    @KafkaListener(topics = "s_co2", groupId = "groupId")
+    @KafkaListener(topics = "s_co2", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

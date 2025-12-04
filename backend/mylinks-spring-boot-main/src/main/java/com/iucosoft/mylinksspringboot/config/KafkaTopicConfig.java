@@ -35,9 +35,12 @@ public class KafkaTopicConfig {
     public NewTopic sCo2Topic() { return TopicBuilder.name("s_co2").build(); }
 
     @Bean
-    public NewTopic cImageTopic() { return TopicBuilder.name("c_image").build(); }
+    public NewTopic cStreamTopic() { return TopicBuilder.name("c_stream").build(); }
 
     @Bean
-    public NewTopic cStreamTopic() { return TopicBuilder.name("c_stream").build(); }
+    public NewTopic cStream2Topic() { return TopicBuilder.name("c_stream_2").build(); }
+
+    @Bean
+    public NewTopic cdetectionTopic() { return TopicBuilder.name("c_detection").build(); }
 
 }
