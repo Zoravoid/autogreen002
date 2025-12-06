@@ -19,37 +19,6 @@ spec:
         image: zoravoid/autogreen:01
         ports:
         - containerPort: 3000
-        env:
-        - name: SENSOR_USER
-          valueFrom:
-            secretKeyRef:
-              name: sensordb-secret
-              key: sensordb-user
-        - name: SENSOR_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: sensordb-secret
-              key: sensordb-password
-        - name: SENSOR_URL
-          valueFrom:
-            configMapKeyRef:
-              name: sensordb-config
-              key: sensordb-service
-        - name: USER_USER
-          valueFrom:
-            secretKeyRef:
-              name: userdb-secret
-              key: userdb-user
-        - name: USER_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: userdb-secret
-              key: userdb-password
-        - name: USER_URL
-          valueFrom:
-            configMapKeyRef:
-              name: userdb-config
-              key: userdb-service
 ---
 apiVersion: v1
 kind: Service

@@ -10,7 +10,7 @@ const deviceId = 1;
 const page = 0;
 const size = 10;
 
-const HUMIDITY_URL = `http://lilithvoid.local:80/backend/api/humidity/${deviceId}/humidities?page=${page}&size=${size}`;
+const HUMIDITY_URL = `http://lilithvoid.local:80/backend/api/humidity/${deviceId}/humidities?page=${page}&size=${size}&sort=timeStamp,desc`;
 
 useEffect(() => {
 async function loadData() {
@@ -42,7 +42,7 @@ return (
 style={{ width: '100%', maxWidth: '700px', height: '100%', maxHeight: '70vh', aspectRatio: 1.618 }}
 data={humidity}
 margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
-> <CartesianGrid strokeDasharray="3 3" /> <XAxis dataKey="time_stamp" /> <YAxis width="auto" dataKey="humidity_val"/> <Tooltip /> <Legend />
+> <CartesianGrid strokeDasharray="3 3" /> <XAxis dataKey="time_stamp" reversed={true}/> <YAxis width="auto" dataKey="humidity_val"/> <Tooltip /> <Legend />
 <Line type="monotone" dataKey="humidity_val" stroke="#4e9760ff" isAnimationActive={false} activeDot={{ r: 8 }} /> </LineChart>
 );
 }

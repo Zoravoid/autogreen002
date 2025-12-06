@@ -91,3 +91,7 @@ To check if topics exist run:
 {"device_id": 2, "co2_val": 179.877, "time_stamp": "2025-11-25 18:00:00.000"}
 {"device_id": 2, "co2_val": 358.678, "time_stamp": "2025-11-25 19:00:00.000"}
 {"device_id": 2, "co2_val": 46.350, "time_stamp": "2025-11-25 20:00:00.000"}
+
+## Light
+
+{"device_id": 1, "light_val": 49.309, "time_stamp": "2025-11-25 22:00:00.000"}

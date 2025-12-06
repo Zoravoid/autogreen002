@@ -17,6 +17,16 @@ to create a docker run the services in the docker compose (only works if the ima
 Running it directly from docker compose only works for the mysql and timescale services. Frontend and backend are custom services and have to be built first 
 To built a custom docker image of the frontend and backend follow these steps
 
+To create a new docker image for Frontend, Springboot Backend or Node.js websocket server run:
+- docker build -t zoravoid/autogreen-"component name":"version" .
+
+If Kafka is being a problem child again nuke the entire docker compose volume with the following:
+- make sure you are in the right directory so: cd database
+- and check with: ls if you see the compose.yaml
+- importaint! make sure docker desktop is up and running before proceding to the next steps
+- run docker-compose down -v to nuke the volume and whipe its memory
+- run docker-compose up -d to rebuild the entire project 
+
 ## Frontend
 
 make sure you are in the frontend/autogreen directory with
@@ -117,26 +127,20 @@ Stop the cluster safely with:
 
 # Kafka
 
-## First step to setup the Broker: 
-- run the docker setup form the compose.yaml in /database
-
-## Create Topics
+The following assumes that a Kafka and Zookeeper container is running (for more information look at database/ dockercompose)
 
 Copy and paste this command to interact with the docker Broker in the Terminal:
-- docker exec --workdir /opt/kafka/bin/ -it autogreen_kafka_broker sh
+- docker exec -it kafka sh
 
-To create the topics run the following commands:
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic s_heat
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic s_co2
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic s_humidity
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic s_moisture
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic c_stream
-- ./kafka-topics.sh --bootstrap-server localhost:9092 --create --topic c_image
+Topics should be automatically created once the Springboot backend connects to Kafka
+
+To check if topics exist run:
+- ./kafka-topics.sh --bootstrap-server localhost:9092 --list
 
 You can test the topics with the following:
-- ./kafka-console-producer.sh --bootstrap-server localhost:9092 --topic "topic_name"
+- /usr/bin/kafka-console-producer --bootstrap-server kafka:9092 --topic "topic_name"
 
 Write a message and when ur done do ctrl + c 
 
 To read your message run: 
-- ./kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic "topic_name" --from-beginning
+- /usr/bin/kafka-console-consumer --bootstrap-server kafka:9092 --topic "topic_name" --from-beginning

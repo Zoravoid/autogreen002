@@ -8,3 +8,5 @@
 /YOLOv8/venv/__pycache__/
 
 /nodejs_backend/node_modules/
+
+/kubernetes
