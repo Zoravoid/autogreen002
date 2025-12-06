@@ -16,10 +16,9 @@ export default function CameraFeed() {
     ws.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        // Expecting { camera: "c_stream" | "c_stream_2", frame: "<base64>" }
         if (data.camera === "c_stream") {
           setCamera0Frame(`data:image/jpeg;base64,${data.frame}`);
-        } else if (data.camera === "c_stream_2") {
+        } else if (data.camera === "c_detection") {
           setCamera1Frame(`data:image/jpeg;base64,${data.frame}`);
         }
       } catch (err) {

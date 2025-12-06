@@ -14,7 +14,7 @@ const consumer = kafka.consumer({ groupId: 'node_backend' });
 async function run() {
     await consumer.connect();
     await consumer.subscribe({ topic: 'c_stream', fromBeginning: false });
-    await consumer.subscribe({ topic: 'c_stream_2', fromBeginning: false });
+    await consumer.subscribe({ topic: 'c_detection', fromBeginning: false });
 
     await consumer.run({
         eachMessage: async ({ topic, message}) => {
