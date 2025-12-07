@@ -7,7 +7,7 @@ export default function CameraFeed() {
   const [camera1Frame, setCamera1Frame] = useState<string | null>(null);
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8081");
+    const ws = new WebSocket("ws://lilithvoid.local:8081");
 
     ws.onopen = () => {
       console.log("Connected to WebSocket server");

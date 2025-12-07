@@ -14,7 +14,7 @@ model.model.half()
 
 frame_consumer = KafkaConsumer(
     'c_stream', 
-    bootstrap_servers=['lilithvoid.local:29092'],
+    bootstrap_servers=['localhost:29092'],
     auto_offset_reset='latest',
     enable_auto_commit=True,
     group_id='yolo-ai'

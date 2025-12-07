@@ -4,7 +4,7 @@ print("Starting producer...")
 
 try:
     binary_producer = KafkaProducer(
-        bootstrap_servers="lilithvoid.local:29092",
+        bootstrap_servers="localhost:29092",
         value_serializer=lambda v: v 
     )
     print("Binary Producer created successfully.")

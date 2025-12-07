@@ -14,8 +14,6 @@ services:
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
-    volumes:
-      - zookeeper_data:/var/lib/zookeeper/data
   
   kafka:
     image: confluentinc/cp-kafka:7.5.0
@@ -25,6 +23,8 @@ services:
     ports:
       - "9092:9092"
       - "29092:29092"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -37,8 +37,9 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_NUM_PARTITIONS: 3
-    volumes:
-      - kafka_data:/var/lib/kafka/data
+      KAFKA_LOG_RETENTION_MS: 200000
+      KAFKA_DELETE_RETENTION_MS: 2000
+      KAFKA_SEGMENT_MS: 2000
 
   db_timescale:
     container_name: autogreen_timescaledb
@@ -54,7 +55,7 @@ services:
 
   backend:
     container_name: autogreen_backend_test
-    image: zoravoid/autogreen-backend:05
+    image: zoravoid/autogreen-backend:06
     ports:
       - "8080:8080"
     depends_on:
@@ -78,6 +79,17 @@ services:
       - "8081:8081"
     depends_on:
       - kafka
+  
+  #autogreen_ai:
+  #  container_name: autogreen_ai_service
+  #  image: zoravoid/autogreen-ai:01
+  #  deploy:
+  #    resources:
+  #      reservations:
+  #        devices:
+  #          - capabilities: [gpu]
+  #  depends_on:
+  #    - kafka
 
   pgadmin:
     image: dpage/pgadmin4

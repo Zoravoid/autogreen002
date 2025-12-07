@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 public class LightDTO {
 
-    @JsonProperty("deviceId")
+    @JsonProperty("device_id")
     private Long deviceId;
 
     @JsonProperty("light_val")

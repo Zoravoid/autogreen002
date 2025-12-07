@@ -144,3 +144,10 @@ Write a message and when ur done do ctrl + c
 
 To read your message run: 
 - /usr/bin/kafka-console-consumer --bootstrap-server kafka:9092 --topic "topic_name" --from-beginning
+
+# YOLOv8
+
+Run commands:
+- cd YOLOv8
+- source venv/bin/activate
+- python3 yolo_ai_script.py
