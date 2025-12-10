@@ -7,7 +7,7 @@ import numpy as np
 from ai_kafka_producer import send_frame
 from ultralytics.utils.nms import non_max_suppression
 
-model = YOLO("yolov8m.pt")
+model = YOLO("./models/best.pt")
 model.to("cuda")
 model.predict(np.zeros((640, 640, 3), dtype=np.uint8))
 model.model.half()
