@@ -1,6 +1,8 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import "./chart.css";
+
 interface Co2Data {
   time_stamp: string;
   co2_val: number;
@@ -64,26 +66,31 @@ export default function Co2Chart() {
     <div className="w-full flex flex-col items-center gap-4">
       <audio ref={audioRef} src="/audio/Prayer to the Machine God  Warhammer 40k.mp3" preload="auto" />
       <audio ref={audioRef02} src="/audio/The Rebel Path Cello Version X Johnny's Speech.mp3" preload="auto" />
-      <div className="flex flex-wrap gap-4 mb-4 justify-center">
-        <label className="flex flex-col text-sm font-semibold w-full">
-          Device ID
-          <input
-            type="number"
-            value={deviceId}
-            onChange={(e) => setDeviceId(Number(e.target.value))}
-            className="border rounded p-1 text-black"
-          />
-        </label>
-        <label className="flex flex-col text-sm font-semibold w-full">
-          Size
-          <input
-            type="number"
-            value={size}
-            onChange={(e) => setSize(Number(e.target.value))}
-            className="border rounded p-1 text-black"
-          />
-        </label>
-      </div>
+        <div className="flex flex-wrap gap-4 mb-4 justify-center">
+          <div className='inputall'>
+          <label className="flex flex-col text-sm font-semibold w-full">
+            Device ID
+            <input
+              type="number"
+              value={deviceId}
+              onChange={(e) => setDeviceId(Number(e.target.value))}
+              className="inputfield"
+            />
+          </label>
+          </div>
+          <div className='inputall'>
+          <label className="flex flex-col text-sm font-semibold w-full">
+            Size
+            <input
+              type="number"
+              value={size}
+              onChange={(e) => setSize(Number(e.target.value))}
+              className="inputfield"
+            />
+          </label>
+          </div>
+        </div>
+
 
 
       

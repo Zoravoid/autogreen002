@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import "./chart.css";
 
 interface MoistureData {
   time_stamp: string;
@@ -38,25 +39,28 @@ export default function MoistureChart() {
   return (
     <div className="w-full flex flex-col items-center gap-4">
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
+        <div className='inputall'>
         <label className="flex flex-col text-sm font-semibold w-full">
           Device ID
           <input
             type="number"
             value={deviceId}
             onChange={(e) => setDeviceId(Number(e.target.value))}
-            className="border rounded p-1 text-black"
+            className="inputfield"
           />
         </label>
-
+        </div>
+        <div className='inputall'>
         <label className="flex flex-col text-sm font-semibold w-full">
           Size
           <input
             type="number"
             value={size}
             onChange={(e) => setSize(Number(e.target.value))}
-            className="border rounded p-1 text-black"
+            className="inputfield"
           />
         </label>
+        </div>
       </div>
 
 

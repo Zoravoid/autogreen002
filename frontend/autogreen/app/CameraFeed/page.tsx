@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "./camera.css";
 
 export default function CameraFeed() {
   const [camera0Frame, setCamera0Frame] = useState<string | null>(null);
@@ -43,7 +44,7 @@ export default function CameraFeed() {
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <h1 className="text-xl font-bold">Live Camera Feed</h1>
       <div className="grid grid-cols-2 gap-4 w-full justify-items-center">
-        <div>
+        <div className="camera">
           <h2 className="text-center mb-2">Camera 0</h2>
           {camera0Frame ? (
             <img
@@ -56,7 +57,7 @@ export default function CameraFeed() {
           )}
         </div>
 
-        <div>
+        <div className="camera">
           <h2 className="text-center mb-2">Camera 1</h2>
           {camera1Frame ? (
             <img
