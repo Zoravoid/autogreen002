@@ -2,6 +2,7 @@ import Co2Chart from "../_components/_charts/co2_chart";
 import HeatChart from "../_components/_charts/heat_chart";
 import HumidityChart from "../_components/_charts/humidity_chart";
 import MoistureChart from "../_components/_charts/moisture_chart";
+import LightChart from "../_components/_charts/light_chart";
 
 export default function SensorData() {
   return (
@@ -26,6 +27,11 @@ export default function SensorData() {
         <GridItem title="CO2 Chart">
           <Co2Chart />
         </GridItem>
+
+         <GridItem title="Light Chart">
+          <LightChart />
+        </GridItem>
+
 
       </div>
 
