@@ -1,4 +1,6 @@
 import TestChart2 from "../_components/_charts/testchart2";
+import "./energyChart.css";
+
 
 export default function EnergyInfo() {
   return (
@@ -22,11 +24,12 @@ export default function EnergyInfo() {
 
 function GridItem({ title, children}) {
   return (
-    <div className="flex flex-col items-center justify-center p-4 border border-slate-900 
-    rounded-xl h-[400px]">
-      <h3 className="text-2xl font-semibold  mb-4" >{title}</h3>
-      {children} 
+    <div className="chartsgrid">
+      <div className="flex flex-col items-center justify-center p-4 h-[400px]">
+        <h3 className="text-2xl font-semibold  mb-4" >{title}</h3>
+        {children} 
 
+      </div>
     </div>
   );
 }
