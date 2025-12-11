@@ -74,7 +74,7 @@ services:
 
   nodejs_backend:
     container_name: autogreen_nodejs_backend
-    image: zoravoid/autogreen-backend:03
+    image: zoravoid/autogreen-backend:10
     ports:
       - "8081:8081"
     depends_on:

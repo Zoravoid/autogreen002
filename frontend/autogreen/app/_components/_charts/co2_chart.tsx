@@ -8,6 +8,7 @@ interface Co2Data {
 export default function Co2Chart() {
   const [co2, setCo2] = useState<Co2Data[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef02 = useRef<HTMLAudioElement | null>(null);
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
@@ -34,20 +35,35 @@ export default function Co2Chart() {
 
 
   useEffect(() => {
-    if (!audioRef.current) return;
+    if (!audioRef.current || !audioRef02.current) return;
+
+    const stopAllAudio = () => {
+    [audioRef.current, audioRef02.current]
+    .filter((a): a is HTMLAudioElement => a !== null)
+    .forEach((audio) => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+    };
+
     if (deviceId == 40000 || size == 40000) {
-      audioRef.current.currentTime = 0;
+      stopAllAudio();
       audioRef.current.play().catch((err: unknown) =>
+        console.error('Audio play error:', err)
+      );
+    }
+    if (deviceId == 2077 || size == 2077) {
+      stopAllAudio();
+      audioRef02.current.play().catch((err: unknown) =>
         console.error('Audio play error:', err)
       );
     }
   }, [deviceId, size]);
 
-
-
   return (
     <div className="w-full flex flex-col items-center gap-4">
       <audio ref={audioRef} src="/audio/Prayer to the Machine God  Warhammer 40k.mp3" preload="auto" />
+      <audio ref={audioRef02} src="/audio/The Rebel Path Cello Version X Johnny's Speech.mp3" preload="auto" />
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <label className="flex flex-col text-sm font-semibold w-full">
           Device ID

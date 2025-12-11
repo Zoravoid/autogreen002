@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: autogreen-frontend-deployment
   labels:
-    app: autogreenfront
+    app: autogreenfrontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: autogreenfront
+      app: autogreenfrontend
   template:
     metadata:
       labels:
-        app: autogreenfront
+        app: autogreenfrontend
     spec:
       containers:
       - name: autogreen-frontend
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: autogreenfront
+    app: autogreenfrontend
   ports:
   - protocol: TCP
     port: 3000

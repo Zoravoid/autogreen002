@@ -1,15 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-} from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
 
 interface MoistureData {
   time_stamp: string;
@@ -18,7 +10,6 @@ interface MoistureData {
 
 export default function MoistureChart() {
   const [moisture, setMoisture] = useState<MoistureData[]>([]);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
@@ -44,28 +35,8 @@ export default function MoistureChart() {
     return () => clearInterval(interval);
   }, [MOISTURE_URL]);
 
-
-
-  useEffect(() => {
-    if (!audioRef.current) return;
-
-    if (deviceId === 40000 || size === 40000) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().catch((err) =>
-        console.error('Audio play error:', err)
-      );
-    }
-  }, [deviceId, size]);
-
-
-
   return (
     <div className="w-full flex flex-col items-center gap-4">
-      <audio
-        ref={audioRef}
-        src="/audio/Prayer to the Machine God  Warhammer 40k.mp3"
-        preload="auto"
-      />
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <label className="flex flex-col text-sm font-semibold w-full">
           Device ID
