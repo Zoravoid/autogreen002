@@ -1,5 +1,13 @@
-Requesting data from Pico1...
-Received from Pico: [1187.69, 22.76, 40.87]
-Requesting data from Pico2...
-Recived from pi 2: [36.75]
-[datetime.datetime(2025, 12, 12, 16, 33, 32, 7447), 1187.69, 22.76, 40.87, 36.75]
+Traceback (most recent call last):
+  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 88, in <module>
+    main()
+    ~~~~^^
+  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 83, in main
+    send_all()
+    ~~~~~~~~^^
+  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 56, in send_all
+    raw = fetch_all_lora_data()
+  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 51, in fetch_all_lora_data
+    "moisture": pico2[0]
+                ~~~~~^^^
+TypeError: 'float' object is not subscriptable
