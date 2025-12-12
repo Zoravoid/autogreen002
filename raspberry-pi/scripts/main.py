@@ -64,21 +64,20 @@ def send_all():
         }
 
         topic = f"s_{sensor}"
-        print(f"→ Sending to topic '{topic}': {payload}")
+        print(f"Sending to topic '{topic}': {payload}")
         send_sensor_data(topic, payload)
 
 def receive_all():
-    """Test function — prints what Kafka sends back."""
     for sensor in ["co2", "heat", "humidity", "moisture"]:
         vals = get_sensor_data(sensor)
-        print(f"← Received from Kafka ({sensor}): {vals}")
+        print(f"Received from Kafka ({sensor}): {vals}")
 
 
 def main():
     cam_thread = threading.Thread(target=start_camera_streaming, daemon=True)
     cam_thread.start()
 
-    print("System initialized. LoRa and camera both humming like enchanted bees.")
+    print("System initialized.")
 
     while True:
         send_all()
