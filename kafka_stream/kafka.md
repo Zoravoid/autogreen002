@@ -94,4 +94,18 @@ To check if topics exist run:
 
 ## Light
 
-{"device_id": 1, "light_val": 49.309, "time_stamp": "2025-11-25 22:00:00.000"}
+{"device_id": 1, "light_val": 56.322, "time_stamp": "2025-11-25 22:00:00.000"}
+{"device_id": 1, "light_val": 264.190, "time_stamp": "2025-11-25 21:00:00.000"} 
+{"device_id": 1, "light_val": 301.111, "time_stamp": "2025-11-25 16:00:00.000"} 
+{"device_id": 1, "light_val": 960.254, "time_stamp": "2025-11-25 17:00:00.000"} 
+{"device_id": 1, "light_val": 322.673, "time_stamp": "2025-11-25 18:00:00.000"} 
+{"device_id": 1, "light_val": 477.576, "time_stamp": "2025-11-25 19:00:00.000"} 
+{"device_id": 1, "light_val": 821.221, "time_stamp": "2025-11-25 20:00:00.000"}
+
+{"device_id": 2, "light_val": 562.611, "time_stamp": "2025-11-25 14:00:00.000"} 
+{"device_id": 2, "light_val": 368.666, "time_stamp": "2025-11-25 21:00:00.000"} 
+{"device_id": 2, "light_val": 875.697, "time_stamp": "2025-11-25 16:00:00.000"} 
+{"device_id": 2, "light_val": 315.188, "time_stamp": "2025-11-25 17:00:00.000"} 
+{"device_id": 2, "light_val": 125.276, "time_stamp": "2025-11-25 18:00:00.000"} 
+{"device_id": 2, "light_val": 310.921, "time_stamp": "2025-11-25 19:00:00.000"} 
+{"device_id": 2, "light_val": 855.590, "time_stamp": "2025-11-25 20:00:00.000"}

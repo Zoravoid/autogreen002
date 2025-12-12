@@ -4,29 +4,29 @@ import { useState, useEffect, useRef } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
 import "./chart.css";
 
-interface HumidityData {
+interface LightData {
   time_stamp: string;
-  humidity_val: number;
+  light_val: number;
 }
 
-export default function HumidityChart() {
-  const [humidity, setHumidity] = useState<HumidityData[]>([]);
+export default function LightChart() {
+  const [light, setLight] = useState<LightData[]>([]);
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
-  const HUMIDITY_URL = `http://lilithvoid.local/backend/api/humidity/${deviceId}/humidities?page=${page}&size=${size}&sort=timeStamp,desc`;
+  const LIGHT_URL = ` http://lilithvoid.local/backend/api/light/${deviceId}/lights?page=${page}&size=${size}&sort=timeStamp,desc`;
 
-  
+
 
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetch(HUMIDITY_URL);
+        const response = await fetch(LIGHT_URL);
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         const json = await response.json();
-        setHumidity(Array.isArray(json) ? json : json.content);
+        setLight(Array.isArray(json) ? json : json.content);
       } catch (err) {
-        console.error('Failed to fetch humidity data:', err);
+        console.error('Failed to fetch light data:', err);
       }
     }
 
@@ -34,7 +34,7 @@ export default function HumidityChart() {
     const interval = setInterval(loadData, 1000);
 
     return () => clearInterval(interval);
-  }, [HUMIDITY_URL]);
+  }, [LIGHT_URL]);
 
 
 
@@ -67,7 +67,7 @@ export default function HumidityChart() {
 
 
 
-      {!humidity || humidity.length === 0 ? (
+      {!light || light.length === 0 ? (
         <p>Loading or no data yet...</p>
       ) : (
         <LineChart
@@ -78,18 +78,18 @@ export default function HumidityChart() {
             maxHeight: '70vh',
             aspectRatio: 1.618,
           }}
-          data={humidity}
+          data={light}
           margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time_stamp" reversed />
-          <YAxis dataKey="humidity_val" />
+          <YAxis dataKey="light_val" />
           <Tooltip />
           <Legend />
           <Line
             type="monotone"
-            dataKey="humidity_val"
-            stroke="#4e9760ff"
+            dataKey="light_val"
+            stroke="#d18e29ff"
             isAnimationActive={false}
             activeDot={{ r: 8 }}
           />
