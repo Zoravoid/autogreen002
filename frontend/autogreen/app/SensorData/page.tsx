@@ -12,19 +12,19 @@ export default function SensorData() {
 
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
           
-        <GridItem title="Moisture Chart">
+        <GridItem title="Moisture in %">
           <MoistureChart />
         </GridItem>
           
-        <GridItem title="Humidity Chart">
+        <GridItem title="Humidity in %">
           <HumidityChart />
         </GridItem>
 
-        <GridItem title="Heat Chart">
+        <GridItem title="Temperature in °C">
           <HeatChart />
         </GridItem>
 
-        <GridItem title="CO2 Chart">
+        <GridItem title="CO₂ in ppm">
           <Co2Chart />
         </GridItem>
 
