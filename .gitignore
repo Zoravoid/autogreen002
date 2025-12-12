@@ -1,5 +1,6 @@
 /database/.env
 /.idea
+<<<<<<< HEAD
 /YOLOv8/venv/bin/
 /YOLOv8/venv/include/
 /YOLOv8/venv/lib/
@@ -20,3 +21,8 @@
 /nodejs_backend/node_modules/
 
 /kubernetes
+=======
+/YOLOv8
+/kubernetes
+/nodejs_backend
+>>>>>>> 9747ff8 (u1)
