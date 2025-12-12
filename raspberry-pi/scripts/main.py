@@ -44,6 +44,11 @@ def fetch_all_lora_data():
     if pico2 is None:
         pico2 = [None]
 
+    if isinstance(pico2, list):
+        moisture = pico2[0]
+    else:
+        moisture = pico2
+
     return {
         "co2": pico1[0],
         "heat": pico1[1],
