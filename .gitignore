@@ -1,2 +1,5 @@
 /database/.env
 /.idea
+/YOLOv8
+/kubernetes
+/nodejs_backend
