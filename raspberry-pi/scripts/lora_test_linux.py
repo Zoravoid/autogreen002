@@ -2,6 +2,10 @@ from lora_linux_rpi5 import LoRa
 import time
 from datetime import datetime
 
+import serial
+
+ser = serial.Serial(port="/dev/ttyAMA0", baudrate=9600, timeout=1)
+
 # Your wiring:
 CS_PIN = 8
 RST_PIN = 22
@@ -29,7 +33,7 @@ while True:
         output1 = temp_hum_output[:]
         #wtime.append(temp_hum_output)
         flag = flag + 1
-        #print("Received from Pico:", output)
+        print("Received from Pico:", output1)
     
     print("Requesting data from Pico2...")
     lora.send(b"REQ2")
@@ -41,6 +45,7 @@ while True:
         moist_output = eval(msg2)
         output2.append(moist_output)
         flag = flag + 1
+        print("Recived from pi 2:", output2)
     
     #if flag == 2:
     entry = [timenow] + output1 + output2
@@ -48,6 +53,9 @@ while True:
     with open("log_file.txt","a") as f:
         f.write(str(entry) + "\n")
     database.append(entry)
-    print(entry)    
+    print(entry)  
+
+    ser.write(b"Hello")
+    print("sending hello")  
 
     time.sleep(1)

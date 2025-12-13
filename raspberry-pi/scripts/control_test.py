@@ -1,9 +1,4 @@
-from pi_producer import send_sensor_data
-from pi_consumer import get_sensor_data
-from cam_stream import start_camera_streaming
 from lora_linux_rpi5 import LoRa
-
-import threading
 from datetime import datetime
 import json
 import time
@@ -35,8 +30,7 @@ def request_from_pico(request_code):
         return json.loads(msg.decode().replace("'", '"'))
     except:
         return None
-
-
+    
 def fetch_all_lora_data():
     pico1 = request_from_pico("REQ1")
     pico2 = request_from_pico("REQ2")
@@ -59,46 +53,32 @@ def fetch_all_lora_data():
         "moisture": moisture
     }
 
-
 def send_all():
     raw = fetch_all_lora_data()
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
-
+    #print(raw)
+    payload = {"device_id": 1}
     for sensor, value in raw.items():
-        payload = {
-            "device_id": 1,
-            f"{sensor}_val": value,
-            "time_stamp": timestamp
-        }
+        payload[f"{sensor}_val"] = value
+    payload["time_stamp"] = timestamp
+    json_bytes = json.dumps(payload).encode("utf-8")
+    ser.write(json_bytes)
+    print("sent uart", payload)
 
-        topic = f"s_{sensor}"
-        print(f"Sending to topic '{topic}': {payload}")
-        send_sensor_data(topic, payload)
-        json_bytes = json.dumps(payload).encode("utf-8")
-        ser.write(json_bytes)
-        print("sent uart")
-
-def receive_all():
-    for sensor in ["co2", "heat", "humidity", "moisture"]:
-        vals = get_sensor_data(sensor)
-        print(f"Received from Kafka ({sensor}): {vals}")
 
 def receive_uart():
     line = ser.readline().decode("utf-8", errors="replace").strip()
     if line:
         print("Recived:", line)
 
-
 def main():
-    cam_thread = threading.Thread(target=start_camera_streaming, daemon=True)
-    cam_thread.start()
 
     print("System initialized.")
 
     while True:
         receive_uart()
         send_all()
-        time.sleep(5)
+        time.sleep(1)
 
 
 if __name__ == "__main__":

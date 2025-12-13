@@ -33,9 +33,9 @@ class LoRa:
         self.cs = cs_pin
         self.rst = rst_pin
 
-        self.chip = lgpio.gpiochip_open(0)
+        self.chip = lgpio.gpiochip_open(4)
 
-        lgpio.gpio_claim_output(self.chip, self.cs, 1)
+        #lgpio.gpio_claim_output(self.chip, self.cs, 1)
         lgpio.gpio_claim_output(self.chip, self.rst, 1)
 
         # Open SPI
@@ -71,14 +71,14 @@ class LoRa:
         time.sleep(0.05)
 
     def write_reg(self, address, value):
-        lgpio.gpio_write(self.chip, self.cs, 0)
-        self.spi.xfer2([...])
-        lgpio.gpio_write(self.chip, self.cs, 1)
+        #lgpio.gpio_write(self.chip, self.cs, 0)
+        self.spi.xfer2([address | 0x80, value])
+        #lgpio.gpio_write(self.chip, self.cs, 1)
 
     def read_reg(self, address):
-        lgpio.gpio_write(self.chip, self.cs, 0)
-        result = self.spi.xfer2([...])[1]
-        lgpio.gpio_write(self.chip, self.cs, 1)
+        #lgpio.gpio_write(self.chip, self.cs, 0)
+        result = self.spi.xfer2([address & 0x7F, 0x00])[1]
+        #lgpio.gpio_write(self.chip, self.cs, 1)
         return result
 
     def set_freq(self, frequency):
@@ -95,9 +95,9 @@ class LoRa:
         self.write_reg(REG_FIFO_ADDR_PTR, 0)
         self.write_reg(REG_PAYLOAD_LENGTH, len(data))
 
-        lgpio.gpio_write(self.chip, self.cs, 0)
+        #lgpio.gpio_write(self.chip, self.cs, 0)
         self.spi.xfer2([REG_FIFO | 0x80] + list(data))
-        lgpio.gpio_write(self.chip, self.cs, 1)
+        #lgpio.gpio_write(self.chip, self.cs, 1)
 
         self.write_reg(REG_OP_MODE, MODE_LONG_RANGE_MODE | MODE_TX)
 
@@ -122,9 +122,9 @@ class LoRa:
             if length == 0:
                 length = self.read_reg(REG_PAYLOAD_LENGTH)
 
-            lgpio.gpio_write(self.chip, self.cs, 0)
-            raw = self.spi.xfer2([REG_FIFO & 0x7F] + [0] * length)[1:]
-            lgpio.gpio_write(self.chip, self.cs, 1)
+            #lgpio.gpio_write(self.chip, self.cs, 0)
+            raw = self.spi.xfer2([REG_FIFO & 0x7F] + [0x00]*length)[1:]
+            #lgpio.gpio_write(self.chip, self.cs, 1)
 
             return bytes(raw)
         return None
