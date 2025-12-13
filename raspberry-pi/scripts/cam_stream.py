@@ -8,8 +8,8 @@ CAM1_TOPIC = "c_stream_2"
 
 def start_camera_streaming():
 
-    picam = Picamera2()
-    # = cv2.videoCapture(1)
+    picam = Picamera2(camera_num= 0)
+    picam2 = Picamera2(camera_num= 1)
 
     config = picam.create_video_configuration(
         main={"size": (640, 480), "format": "RGB888"}
@@ -17,11 +17,17 @@ def start_camera_streaming():
     picam.configure(config)
     picam.start()
 
+    config2 = picam2.create_video_configuration(
+        main={"size": (640, 480), "format": "RGB888"}
+    )
+    picam2.configure(config2)
+    picam2.start()
+
     print("Starting camera streams...")
 
     while True:
         frame = picam.capture_array()
-        #ret1, frame1 = cam1.read()
+        frame2 = picam2.capture_array()
 
         ok, jpeg = cv2.imencode(".jpg", frame)
         if ok:
@@ -30,9 +36,11 @@ def start_camera_streaming():
         else:
             print("JPEG encode failed")
 
-        #if ret1:
-            #ok1, jpeg1 = cv2.imencode(".jpg", frame1)
-            #if ok1:
-                #send_frame(CAM1_TOPIC, jpeg1.tobytes())
+        ok2, jepg = cv2.imencode(".jpg", frame2)
+        if ok2:
+            print("Cam1 OK")
+            send_frame(CAM1_TOPIC, jepg.tobytes())
+        else:
+            print("JEPG encode failed")
 
         time.sleep(0.1)
