@@ -1,69 +1,12 @@
-Starting producer...
-JSON Producer created successfully.
-Binary Producer created successfully.
-System initialized.
-[3:05:57.734182593] [6773]  INFO Camera camera_manager.cpp:340 libcamera v0.6.0+rpt20251202
-[3:05:57.747431815] [6774]  INFO RPI pisp.cpp:720 libpisp version 1.3.0
-[3:05:57.759809957] [6774]  INFO IPAProxy ipa_proxy.cpp:180 Using tuning file /usr/share/libcamera/ipa/rpi/pisp/imx500.json
-[3:05:57.770475920] [6774]  INFO Camera camera_manager.cpp:223 Adding camera '/base/axi/pcie@1000120000/rp1/i2c@80000/imx500@1a' for pipeline handler rpi/pisp
-[3:05:57.770572087] [6774]  INFO RPI pisp.cpp:1181 Registered camera /base/axi/pcie@1000120000/rp1/i2c@80000/imx500@1a to CFE device /dev/media0 and ISP device /dev/media1 using PiSP variant BCM2712_C0
-[3:05:57.775476380] [6773]  INFO Camera camera.cpp:1215 configuring streams: (0) 640x480-RGB888/SMPTE170M/Rec709/None/Full (1) 2028x1520-RGGB_PISP_COMP1/RAW
-[3:05:57.775684900] [6774]  INFO RPI pisp.cpp:1485 Sensor: /base/axi/pcie@1000120000/rp1/i2c@80000/imx500@1a - Selected sensor format: 2028x1520-SRGGB10_1X10/RAW - Selected CFE format: 2028x1520-PC1R/RAW
-Starting camera streams...
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Cam0 OK
-Sent frame to topic: c_stream
-Traceback (most recent call last):
-  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 88, in <module>
-    main()
-    ~~~~^^
-  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 83, in main
-    send_all()
-    ~~~~~~~~^^
-  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 56, in send_all
-    raw = fetch_all_lora_data()
-  File "/home/autogreen/autogreen-pi-2/./scripts/main.py", line 51, in fetch_all_lora_data
-    "moisture": pico2[0]
-                ~~~~~^^^
-TypeError: 'float' object is not subscriptable
+[    0.030042] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.030077] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.030199] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.030238] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.383160] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.383458] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.383475] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.680025] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.680051] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    5.520635] rp1-cfe 1f00128000.csi: found subdevice /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    5.975188] imx500 11-001a: Device found is imx500
+[    5.975724] rp1-cfe 1f00128000.csi: Using sensor imx500 11-001a for capture
