@@ -245,6 +245,14 @@ INSERT INTO `moisture` VALUES (1,1,66.101,'2025-04-10 09:39:27.000000'),
 /*!40000 ALTER TABLE `moisture` ENABLE KEYS */;
 UNLOCK TABLES;
 
+--Light
+LOCK TABLES `light` WRITE;
+/*!40000 ALTER TABLE `light` DISABLE KEYS */;
+INSERT INTO `light` VALUES (1,1,66.101,'2025-04-10 09:39:27.000000'),
+                          (2,2,99.309, '2025-04-10 09:39:27.000000');
+/*!40000 ALTER TABLE `light` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Dumping data for table `userstatus_users`
 --

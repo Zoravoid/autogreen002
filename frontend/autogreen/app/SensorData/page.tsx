@@ -1,6 +1,8 @@
-import TestChart from "../_components/_charts/testchart";
-import TestChart2 from "../_components/_charts/testchart2";
-import ApiChart from "../_components/_charts/api_testchart";
+import Co2Chart from "../_components/_charts/co2_chart";
+import HeatChart from "../_components/_charts/heat_chart";
+import HumidityChart from "../_components/_charts/humidity_chart";
+import MoistureChart from "../_components/_charts/moisture_chart";
+import LightChart from "../_components/_charts/light_chart";
 
 export default function SensorData() {
   return (
@@ -10,13 +12,26 @@ export default function SensorData() {
 
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
           
-        <GridItem title="Test Chart">
-          <ApiChart />
+        <GridItem title="Moisture in %">
+          <MoistureChart />
         </GridItem>
           
-        <GridItem title="Test2 Chart">
-          <TestChart2 />
+        <GridItem title="Humidity in %">
+          <HumidityChart />
         </GridItem>
+
+        <GridItem title="Temperature in °C">
+          <HeatChart />
+        </GridItem>
+
+        <GridItem title="CO₂ in ppm">
+          <Co2Chart />
+        </GridItem>
+
+        <GridItem title="Luminecense in Lux">
+          <LightChart />
+        </GridItem>
+
       </div>
 
     </div>
@@ -28,8 +43,8 @@ export default function SensorData() {
 function GridItem({ title, children}) {
   return (
     <div className="flex flex-col items-center justify-center p-4 border border-slate-900 
-    rounded-xl h-[400px]">
-      <h3 className="text-2xl font-semibold text-white mb-4">{title}</h3>
+    rounded-xl h-[500px]">
+      <h3 className="text-2xl font-semibold  mb-4" >{title}</h3>
       {children} 
 
     </div>

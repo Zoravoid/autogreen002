@@ -1,0 +1,12 @@
+/database/.env
+/.idea
+/YOLOv8/venv/bin/
+/YOLOv8/venv/include/
+/YOLOv8/venv/lib/
+/YOLOv8/venv/lib64/
+/YOLOv8/venv/share/
+/YOLOv8/venv/__pycache__/
+
+/nodejs_backend/node_modules/
+
+/kubernetes

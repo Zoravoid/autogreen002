@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: sensordb-config
-data:
-  sensordb-url: sensordb-service

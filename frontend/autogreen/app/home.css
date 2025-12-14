@@ -1,0 +1,16 @@
+.homePage {
+    justify-content: center;
+    padding-top: 10%;
+    padding-left: 13%;
+}
+
+.image {
+    position: relative;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.text {
+    padding-top: 5%;
+    text-align: justify;
+}

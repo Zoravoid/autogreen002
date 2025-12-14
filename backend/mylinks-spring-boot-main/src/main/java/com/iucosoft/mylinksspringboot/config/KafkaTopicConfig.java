@@ -23,6 +23,9 @@ public class KafkaTopicConfig {
     public NewTopic bCo2Topic() { return TopicBuilder.name("b_co2").build(); }
 
     @Bean
+    public NewTopic bLightTopic() { return TopicBuilder.name("b_light").build(); }
+
+    @Bean
     public NewTopic sMoistureTopic() { return TopicBuilder.name("s_moisture").build(); }
 
     @Bean
@@ -35,9 +38,18 @@ public class KafkaTopicConfig {
     public NewTopic sCo2Topic() { return TopicBuilder.name("s_co2").build(); }
 
     @Bean
-    public NewTopic cImageTopic() { return TopicBuilder.name("c_image").build(); }
+    public NewTopic sLightTopic() { return TopicBuilder.name("s_light").build(); }
 
     @Bean
     public NewTopic cStreamTopic() { return TopicBuilder.name("c_stream").build(); }
+
+    @Bean
+    public NewTopic cStream2Topic() { return TopicBuilder.name("c_stream_2").build(); }
+
+    @Bean
+    public NewTopic cdetectionTopic() { return TopicBuilder.name("c_detection").build(); }
+
+    @Bean
+    public NewTopic cdetection2Topic() { return TopicBuilder.name("c_detection_2").build(); }
 
 }

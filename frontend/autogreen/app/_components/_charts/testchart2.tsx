@@ -4,45 +4,45 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 // #region Sample data
 const data = [
   {
-    name: 'Page 1',
-    uv: 4000,
-    pv: 2400,
+    name: '2025-11-25 14:00:00.000',
+    energyUsed: 5287,
+    energyGained: 781,
     amt: 2400,
   },
   {
-    name: 'Page 2',
-    uv: 3000,
-    pv: 1398,
+    name: '2025-12-21 21:00:00.000',
+    energyUsed: 5817,
+    energyGained: 3335,
     amt: 2210,
   },
   {
-    name: 'Page 3',
-    uv: 2000,
-    pv: 9800,
+    name: '2026-1-17 16:00:00.000',
+    energyUsed: 5662,
+    energyGained: 4272,
     amt: 2290,
   },
   {
-    name: 'Page 4',
-    uv: 2780,
-    pv: 3908,
+    name: '2026-2-19 17:00:00.000',
+    energyUsed: 3251,
+    energyGained: 2948,
     amt: 2000,
   },
   {
-    name: 'Page 5',
-    uv: 1890,
-    pv: 4800,
+    name: '2026-3-28 18:00:00.000',
+    energyUsed: 7621,
+    energyGained: 4528,
     amt: 2181,
   },
   {
-    name: 'Page 6',
-    uv: 2390,
-    pv: 3800,
+    name: '2026-4-22 19:00:00.000',
+    energyUsed: 8104,
+    energyGained: 5117,
     amt: 2500,
   },
   {
-    name: 'Page 7',
-    uv: 3490,
-    pv: 4300,
+    name: '2026-5-6 20:00:00.000',
+    energyUsed: 7425,
+    energyGained: 3855,
     amt: 2100,
   },
 ];
@@ -66,8 +66,8 @@ export default function TestChart2() {
       <YAxis width="auto" />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="energyUsed" stroke="#8884d8" activeDot={{ r: 8 }} />
+      <Line type="monotone" dataKey="energyGained" stroke="#82ca9d" />
     </LineChart>
   );
 }

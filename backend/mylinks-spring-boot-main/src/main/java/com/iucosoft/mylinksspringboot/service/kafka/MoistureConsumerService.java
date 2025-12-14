@@ -27,7 +27,7 @@ public class MoistureConsumerService {
     }
 
     @Transactional
-    @KafkaListener(topics = "s_moisture", groupId = "groupId")
+    @KafkaListener(topics = "s_moisture", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");
