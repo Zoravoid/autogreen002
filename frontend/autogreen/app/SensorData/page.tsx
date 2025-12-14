@@ -28,7 +28,7 @@ export default function SensorData() {
           <Co2Chart />
         </GridItem>
 
-        <GridItem title="Light Chart">
+        <GridItem title="Luminecense in Lux">
           <LightChart />
         </GridItem>
 

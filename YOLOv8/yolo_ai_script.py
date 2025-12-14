@@ -12,8 +12,15 @@ model.to("cuda")
 model.predict(np.zeros((640, 640, 3), dtype=np.uint8))
 model.model.half()
 
+INPUT_TOPICS = ["c_stream", "c_stream_2"]
+
+TOPIC_MAP = {
+    "c_stream": "c_detection",
+    "c_stream_2": "c_detection_2"
+}
+
 frame_consumer = KafkaConsumer(
-    'c_stream', 
+    *INPUT_TOPICS,
     bootstrap_servers=['localhost:29092'],
     auto_offset_reset='latest',
     enable_auto_commit=True,
@@ -69,15 +76,16 @@ def infer_fp16(frame, conf_thres=0.25, iou_thres=0.45):
         return Result()
 
 for msg in frame_consumer:
-    jpeg_bytes = msg.value
-    np_img = np.frombuffer(jpeg_bytes, dtype=np.uint8)
+    input_topic = msg.topic
+    output_topic = TOPIC_MAP.get(input_topic)
+    np_img = np.frombuffer(msg.value, dtype=np.uint8)
     frame = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
 
     if frame is None:
-        print("Failed to decode image")
+        print(f"Failed to decode frame from {input_topic}")
         continue
 
-    print("Received frame for inference")
+    print(f"Received frame from {input_topic}")
 
     try:
         result = infer_fp16(frame)
@@ -97,5 +105,5 @@ for msg in frame_consumer:
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,255,0), 1)
 
     _, jpeg_annotated = cv2.imencode('.jpg', annotated)
-    send_frame("c_detection", jpeg_annotated.tobytes())
-    print("Published detections")
+    send_frame(output_topic, jpeg_annotated.tobytes())
+    print(f"Published detections to {output_topic}")

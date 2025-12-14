@@ -49,4 +49,7 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic cdetectionTopic() { return TopicBuilder.name("c_detection").build(); }
 
+    @Bean
+    public NewTopic cdetection2Topic() { return TopicBuilder.name("c_detection_2").build(); }
+
 }
