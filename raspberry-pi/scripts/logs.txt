@@ -1,0 +1,12 @@
+[    0.030042] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.030077] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.030199] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.030238] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.383160] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.383458] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    0.383475] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.680025] /axi/pcie@1000120000/rp1/csi@128000: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    0.680051] /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a: Fixed dependency cycle(s) with /axi/pcie@1000120000/rp1/csi@128000
+[    5.520635] rp1-cfe 1f00128000.csi: found subdevice /axi/pcie@1000120000/rp1/i2c@80000/imx500@1a
+[    5.975188] imx500 11-001a: Device found is imx500
+[    5.975724] rp1-cfe 1f00128000.csi: Using sensor imx500 11-001a for capture
