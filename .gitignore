@@ -1,6 +1,9 @@
 /database/.env
 /.idea
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7c168b0 (Merge branch 'main' into raspberri-pi)
 /YOLOv8/venv/bin/
 /YOLOv8/venv/include/
 /YOLOv8/venv/lib/
@@ -10,6 +13,7 @@
 
 /nodejs_backend/node_modules/
 
+<<<<<<< HEAD
 /kubernetes
 /YOLOv8/venv/bin/
 /YOLOv8/venv/include/
@@ -26,3 +30,6 @@
 /kubernetes
 /nodejs_backend
 >>>>>>> 9747ff8 (u1)
+=======
+/kubernetes
+>>>>>>> 7c168b0 (Merge branch 'main' into raspberri-pi)
