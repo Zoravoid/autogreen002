@@ -14,7 +14,6 @@ lora = LoRa(cs_pin=CS_PIN, rst_pin=RST_PIN)
 database = []
 
 while True:
-    flag = 0
     timenow = datetime.now()
     entry = []
     output1 = []
@@ -31,8 +30,6 @@ while True:
         msg = bmsg.decode()
         temp_hum_output = eval(msg)
         output1 = temp_hum_output[:]
-        #wtime.append(temp_hum_output)
-        flag = flag + 1
         print("Received from Pico:", output1)
     
     print("Requesting data from Pico2...")
@@ -44,10 +41,8 @@ while True:
         msg2 = bmsg2.decode()
         moist_output = eval(msg2)
         output2.append(moist_output)
-        flag = flag + 1
         print("Recived from pi 2:", output2)
     
-    #if flag == 2:
     entry = [timenow] + output1 + output2
     
     with open("log_file.txt","a") as f:
