@@ -55,12 +55,28 @@ services:
 
   backend:
     container_name: autogreen_backend_test
-    image: zoravoid/autogreen-backend:02
+    image: zoravoid/autogreen-backend:06
     ports:
       - "8080:8080"
     depends_on:
       - db_timescale
       - kafka
+
+  mediator:
+    container_name: godot_mediator
+    image: zoravoid/calculia-mediator:03
+    ports:
+      - "5000:5000"
+    depends_on:
+      - kafka
+
+  #frontend:
+    #container_name: calculia_frontend
+    #image: zoravoid/autogreen-frontend:02
+    #ports:
+      #- 3000:3000
+    #depends_on:
+      #- backend
 
   proxy:
     container_name: nginx-proxy
@@ -72,13 +88,13 @@ services:
     depends_on:
       - backend
 
-  nodejs_backend:
-    container_name: autogreen_nodejs_backend
-    image: zoravoid/autogreen-backend:11
-    ports:
-      - "8081:8081"
-    depends_on:
-      - kafka
+  #nodejs_backend:
+    #container_name: autogreen_nodejs_backend
+    #image: zoravoid/autogreen-backend:10
+    #ports:
+      #- "8081:8081"
+    #depends_on:
+      #- kafka
   
   #autogreen_ai:
   #  container_name: autogreen_ai_service
@@ -91,27 +107,31 @@ services:
   #  depends_on:
   #    - kafka
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: autogreen_pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "5050:80"
-    depends_on:
-      - db_timescale
 
-  grafana:
-    image: grafana/grafana:latest
-    container_name: autogreen_grafana
-    ports:
-      - "3001:3000"
-    environment:
-      GF_SECURITY_ADMIN_PASSWORD: admin
-    depends_on:
-      - db_timescale
+  #pgadmin:
+    #image: dpage/pgadmin4
+    #container_name: autogreen_pgadmin
+   #environment:
+      #PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      #PGADMIN_DEFAULT_PASSWORD: admin
+    #ports:
+      #- "5050:80"
+    #depends_on:
+      #- db_timescale
+
+  #grafana:
+    #image: grafana/grafana:latest
+    #container_name: autogreen_grafana
+    #ports:
+      #- "3001:3000"
+    #environment:
+      #GF_SECURITY_ADMIN_PASSWORD: admin
+    #depends_on:
+      #- db_timescale
 
 
 #docker-compose down -v
 #docker-compose up -d
+#docker-compose rm -v "name"
+#docker volume rm database_kafka_data
+#docker volume rm database_zookeeper_data

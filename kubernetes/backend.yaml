@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autogreen-backend-deployment
+  labels:
+    app: autogreenbackend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autogreenbackend
+  template:
+    metadata:
+      labels:
+        app: autogreenbackend
+    spec:
+      containers:
+      - name: autogreen-backend
+        image: zoravoid/backend:05
+        ports:
+        - containerPort: 8080
+        env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-user
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: postgres-password
+        - name: POSTGRES_URL
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-config
+              key: postgres-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autogreenback-service
+spec:
+  type: NodePort
+  selector:
+    app: autogreenfront
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    NodePort: 28080

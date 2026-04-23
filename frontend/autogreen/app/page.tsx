@@ -7,24 +7,16 @@ export default function Home() {
     <div className="items-center justify-items-center min-h-screen">
        <div className="image">
        <Image
-          src="/tomatoes.jpg"
+          src="/home.png"
           alt="Tomato Picture"
           width={550}
           height={550}
         />
         </div>
         <div className="text">
-          This systems was made for a student project called Automated 
-          Greenhouse. The project aims to design and implement a full-scale
-          automated greenhouse that integrates mechanical, mechatronic, 
-          electronic and software systems into a cohesive, intelligent 
-          agricultural environment. The project is being made together with
-          Szelgaard ApS, which is a company that focuses on developing future
-          technologies within the green sector. The system will employ an 
-          array of sensors, robotic mechanisms, and AI functionalities. The 
-          project should be approached mostly as a ptototype or proof of 
-          concept for what could become a fully automated greenhouse with 
-          minimal human supervision.
+          This system was originally designed for our Experte in Teams project called Automated Greenhouse. 
+          This service used to handle sensory analytics for greenhouse components but was repurposed to serve as an analysis tool for our current Bachelor Thesis.
+          Here we observe the results of our 2 Parameter Logistics function, a model based on Item Response Theory, to estimate player Skill and adjust difficulty based on performance.
         </div>
     </div>
     </div>

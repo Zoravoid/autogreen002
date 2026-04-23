@@ -5,7 +5,7 @@ import "./logo.css";
 const Logo = () => {
     return <div className="logo">
         <Image
-                  src="/logo.png"
+                  src="/calculia.png"
                   alt="Autogreen logo"
                   width={50}
                   height={50}

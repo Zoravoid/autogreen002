@@ -46,7 +46,7 @@ async function startKafka() {
   try {
     await consumer.connect();
     await consumer.subscribe({ topic: 'c_detection', fromBeginning: false });
-    await consumer.subscribe({ topic: 'c_detection_2', fromBeginning: false });
+    await consumer.subscribe({ topic: 'c_stream', fromBeginning: false });
 
     await consumer.run({
       eachMessage: async ({ topic, message }) => {

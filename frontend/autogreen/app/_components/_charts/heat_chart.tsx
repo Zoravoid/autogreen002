@@ -14,9 +14,9 @@ export default function HeatChart() {
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
-  const HEAT_URL = `http://lilithvoid.local/backend/api/heat/${deviceId}/heats?page=${page}&size=${size}&sort=timeStamp,desc`;
+  const HEAT_URL = `http://lilithvoid:8080/api/player/${deviceId}/players?page=${page}&size=${size}&sort=timeStamp,desc`;
 
-
+  //http://localhost:8080/api/player/0/players?page=0&size=10
 
   useEffect(() => {
     async function loadData() {
@@ -43,7 +43,7 @@ export default function HeatChart() {
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <div className='inputall'>
         <label className="flex flex-col text-sm font-semibold w-full">
-          Device ID
+          Player ID
           <input
             type="number"
             value={deviceId}
@@ -83,16 +83,14 @@ export default function HeatChart() {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time_stamp" reversed />
-          <YAxis dataKey="heat_val" />
+          <YAxis />
           <Tooltip />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="heat_val"
-            stroke="#a14343ff"
-            isAnimationActive={false}
-            activeDot={{ r: 8 }}
-          />
+          <Line type="monotone" dataKey="number_sense" stroke="rgb(184, 34, 34)" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="counting" stroke="#ec8805" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="arithmetic" stroke="#342fa5" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="visual_patterns" stroke="#8a7c05" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="memory" stroke="#009e6f" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>

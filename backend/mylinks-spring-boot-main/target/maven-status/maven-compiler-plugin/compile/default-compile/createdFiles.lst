@@ -4,6 +4,7 @@ com/iucosoft/mylinksspringboot/mappers/GroupMapperImpl.class
 com/iucosoft/mylinksspringboot/mappers/custom/CustomLinkMapper.class
 com/iucosoft/mylinksspringboot/entities/Moisture$MoistureBuilderImpl.class
 com/iucosoft/mylinksspringboot/dto/user/UserDTO$UserDTOBuilder.class
+com/iucosoft/mylinksspringboot/entities/Player$PlayerBuilder.class
 com/iucosoft/mylinksspringboot/service/HeatService.class
 com/iucosoft/mylinksspringboot/entities/Link$1.class
 com/iucosoft/mylinksspringboot/service/bridge/GroupCategoryService.class
@@ -42,6 +43,7 @@ com/iucosoft/mylinksspringboot/model/AuditModel$AuditModelBuilder.class
 com/iucosoft/mylinksspringboot/controllers/impl/LightApiImpl.class
 com/iucosoft/mylinksspringboot/dto/sensor/HeatDTO.class
 com/iucosoft/mylinksspringboot/dto/role/RoleDTOList$RoleDTOListBuilder.class
+com/iucosoft/mylinksspringboot/dto/calculia/PlayerDTO.class
 com/iucosoft/mylinksspringboot/dto/link/LinkCreateDTO$LinkCreateDTOBuilder.class
 com/iucosoft/mylinksspringboot/entities/Permission.class
 com/iucosoft/mylinksspringboot/dto/group/GroupAddMemberDTO.class
@@ -73,6 +75,7 @@ com/iucosoft/mylinksspringboot/controllers/HeatApi.class
 com/iucosoft/mylinksspringboot/service/bridge/LinkCategoryService.class
 com/iucosoft/mylinksspringboot/mappers/CategoryMapperImpl.class
 com/iucosoft/mylinksspringboot/util/RequestConstants.class
+com/iucosoft/mylinksspringboot/repositories/PlayerRepository.class
 com/iucosoft/mylinksspringboot/model/AuditModel$1.class
 com/iucosoft/mylinksspringboot/exceptions/ErrorObject.class
 com/iucosoft/mylinksspringboot/dto/user/UserDTOCreate.class
@@ -145,6 +148,7 @@ com/iucosoft/mylinksspringboot/entities/Heat.class
 com/iucosoft/mylinksspringboot/mappers/UserStatusMapperImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkCategory.class
 com/iucosoft/mylinksspringboot/entities/Co2$Co2BuilderImpl.class
+com/iucosoft/mylinksspringboot/mappers/PlayerMapperImpl.class
 com/iucosoft/mylinksspringboot/service/authentication/SecurityTokenService.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkOwner$1.class
 com/iucosoft/mylinksspringboot/repositories/TagRepository.class
@@ -159,6 +163,7 @@ com/iucosoft/mylinksspringboot/entities/Moisture.class
 com/iucosoft/mylinksspringboot/mappers/HumidityMapperImpl.class
 com/iucosoft/mylinksspringboot/controllers/impl/DataApiImpl.class
 com/iucosoft/mylinksspringboot/repositories/UserRepository.class
+com/iucosoft/mylinksspringboot/service/PlayerService.class
 com/iucosoft/mylinksspringboot/repositories/bridge/LinkCategoryRepository.class
 com/iucosoft/mylinksspringboot/mappers/PersonDetailsMapperImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupMember.class
@@ -178,6 +183,7 @@ com/iucosoft/mylinksspringboot/service/PermissionService.class
 com/iucosoft/mylinksspringboot/config/KafkaConsumerConfig.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkTag.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupCategory$1.class
+com/iucosoft/mylinksspringboot/mappers/PlayerMapper.class
 com/iucosoft/mylinksspringboot/controllers/AuthenticationApi.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserReceiver$NotificationUserReceiverBuilderImpl.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/GroupLinkServiceImpl.class
@@ -188,12 +194,14 @@ com/iucosoft/mylinksspringboot/dto/role/RoleDTOCreate.class
 com/iucosoft/mylinksspringboot/dto/PermissionDTO.class
 com/iucosoft/mylinksspringboot/controllers/LightApi.class
 com/iucosoft/mylinksspringboot/entities/Humidity$1.class
+com/iucosoft/mylinksspringboot/service/kafka/PlayerProducerService.class
 com/iucosoft/mylinksspringboot/mappers/custom/CustomUserMapper.class
 com/iucosoft/mylinksspringboot/dto/link/LinkCreateDTO.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupCategory.class
 com/iucosoft/mylinksspringboot/repositories/bridge/GroupMemberRepository.class
 com/iucosoft/mylinksspringboot/entities/Role$1.class
 com/iucosoft/mylinksspringboot/service/OperationIntf.class
+com/iucosoft/mylinksspringboot/controllers/PlayerApi.class
 com/iucosoft/mylinksspringboot/context/UserContext.class
 com/iucosoft/mylinksspringboot/entities/Permission$PermissionBuilder.class
 com/iucosoft/mylinksspringboot/mappers/NotificationMapper.class
@@ -201,6 +209,7 @@ com/iucosoft/mylinksspringboot/entities/Role$RoleBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupLink$GroupLinkBuilder.class
 com/iucosoft/mylinksspringboot/service/kafka/Co2ProducerService.class
 com/iucosoft/mylinksspringboot/mappers/custom/impl/CustomUserMapperImpl.class
+com/iucosoft/mylinksspringboot/service/kafka/PlayerConsumerService.class
 com/iucosoft/mylinksspringboot/mappers/Co2Mapper.class
 com/iucosoft/mylinksspringboot/service/Co2Service.class
 com/iucosoft/mylinksspringboot/entities/Humidity.class
@@ -208,6 +217,7 @@ com/iucosoft/mylinksspringboot/service/bridge/RoleUserService.class
 com/iucosoft/mylinksspringboot/mappers/MoistureMapper.class
 com/iucosoft/mylinksspringboot/entities/bridge/PermissionRole$1.class
 com/iucosoft/mylinksspringboot/config/locale/I18nConfig.class
+com/iucosoft/mylinksspringboot/controllers/impl/PlayerApiImpl.class
 com/iucosoft/mylinksspringboot/dto/group/GroupMembersDTO.class
 com/iucosoft/mylinksspringboot/entities/Priority.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserReceiver$NotificationUserReceiverBuilder.class
@@ -219,6 +229,7 @@ com/iucosoft/mylinksspringboot/service/kafka/LightConsumerService.class
 com/iucosoft/mylinksspringboot/service/HumidityService.class
 com/iucosoft/mylinksspringboot/mappers/PermissionMapper.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupMember$1.class
+com/iucosoft/mylinksspringboot/entities/Player.class
 com/iucosoft/mylinksspringboot/controllers/LinkApi.class
 com/iucosoft/mylinksspringboot/entities/Tag$TagBuilder.class
 com/iucosoft/mylinksspringboot/dto/group/GroupMembersDTO$GroupMembersDTOBuilder.class
@@ -236,6 +247,7 @@ com/iucosoft/mylinksspringboot/entities/Permission$1.class
 com/iucosoft/mylinksspringboot/mappers/RoleMapperImpl.class
 com/iucosoft/mylinksspringboot/dto/group/GroupDTO.class
 com/iucosoft/mylinksspringboot/util/UserStatusUtil.class
+com/iucosoft/mylinksspringboot/entities/Player$PlayerBuilderImpl.class
 com/iucosoft/mylinksspringboot/mappers/MoistureMapperImpl.class
 com/iucosoft/mylinksspringboot/entities/Category$1.class
 com/iucosoft/mylinksspringboot/mappers/UserStatusMapper.class
@@ -257,6 +269,7 @@ com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserSender$Notificati
 com/iucosoft/mylinksspringboot/dto/category/CategoryCreateDTO$CategoryCreateDTOBuilder.class
 com/iucosoft/mylinksspringboot/entities/Category$CategoryBuilder.class
 com/iucosoft/mylinksspringboot/entities/Heat$HeatBuilderImpl.class
+com/iucosoft/mylinksspringboot/entities/Player$1.class
 com/iucosoft/mylinksspringboot/service/bridge/PermissionRoleService.class
 com/iucosoft/mylinksspringboot/entities/Light$1.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/PermissionRoleServiceImpl.class
@@ -298,6 +311,7 @@ com/iucosoft/mylinksspringboot/service/impl/bridge/CategoryOwnerServiceImpl.clas
 com/iucosoft/mylinksspringboot/entities/bridge/GroupLink$GroupLinkBuilderImpl.class
 com/iucosoft/mylinksspringboot/repositories/bridge/NotificationUserSenderRepository.class
 com/iucosoft/mylinksspringboot/controllers/impl/LinkApiImpl.class
+com/iucosoft/mylinksspringboot/service/impl/PlayerServiceImpl.class
 com/iucosoft/mylinksspringboot/service/impl/GroupServiceImpl.class
 com/iucosoft/mylinksspringboot/exceptions/ResourceNotFoundException.class
 com/iucosoft/mylinksspringboot/util/AppConstants$Messages.class

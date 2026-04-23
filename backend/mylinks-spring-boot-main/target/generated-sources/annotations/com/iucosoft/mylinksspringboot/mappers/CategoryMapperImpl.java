@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-11-30T18:57:18+0100",
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_472 (Private Build)"
+    date = "2026-04-22T13:30:10+0200",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 17.0.18 (Ubuntu)"
 )
 @Component
 public class CategoryMapperImpl implements CategoryMapper {

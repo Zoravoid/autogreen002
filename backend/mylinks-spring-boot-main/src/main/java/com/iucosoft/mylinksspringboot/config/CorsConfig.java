@@ -14,10 +14,9 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedOrigin("http://0.0.0.0:3000");
-<<<<<<< HEAD
         config.addAllowedOrigin("http://lilithvoid.local:3000");
-=======
->>>>>>> 7c168b0 (Merge branch 'main' into raspberri-pi)
+        config.addAllowedOrigin("http://tail78ea48.ts.net");
+        config.addAllowedOrigin("https://tail78ea48.ts.net");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);

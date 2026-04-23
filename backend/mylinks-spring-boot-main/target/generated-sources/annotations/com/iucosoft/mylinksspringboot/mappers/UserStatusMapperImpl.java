@@ -7,12 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-<<<<<<< HEAD
-    date = "2025-12-13T21:15:35+0100",
-=======
-    date = "2025-11-30T18:57:18+0100",
->>>>>>> 7c168b0 (Merge branch 'main' into raspberri-pi)
-    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 1.8.0_472 (Private Build)"
+    date = "2026-04-22T13:30:10+0200",
+    comments = "version: 1.5.4.Final, compiler: javac, environment: Java 17.0.18 (Ubuntu)"
 )
 @Component
 public class UserStatusMapperImpl implements UserStatusMapper {

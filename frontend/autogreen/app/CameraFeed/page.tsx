@@ -19,7 +19,7 @@ export default function CameraFeed() {
         const data = JSON.parse(event.data);
         if (data.camera === "c_detection") {
           setCamera0Frame(`data:image/jpeg;base64,${data.frame}`);
-        } else if (data.camera === "c_detection_2") {
+        } else if (data.camera === "c_stream") {
           setCamera1Frame(`data:image/jpeg;base64,${data.frame}`);
         }
       } catch (err) {
@@ -45,11 +45,11 @@ export default function CameraFeed() {
       <h1 className="text-xl font-bold">Live Camera Feed</h1>
       <div className="grid grid-cols-2 gap-4 w-full justify-items-center">
         <div className="camera">
-          <h2 className="text-center mb-2">Camera 0</h2>
+          <h2 className="text-center mb-2">Camera 0 With AI</h2>
           {camera0Frame ? (
             <img
               src={camera0Frame}
-              alt="Camera 0"
+              alt="Camera 0 (With AI)"
               className="max-w-full rounded shadow"
             />
           ) : (
@@ -58,11 +58,11 @@ export default function CameraFeed() {
         </div>
 
         <div className="camera">
-          <h2 className="text-center mb-2">Camera 1</h2>
+          <h2 className="text-center mb-2">Camera 1 Without AI</h2>
           {camera1Frame ? (
             <img
               src={camera1Frame}
-              alt="Camera 1"
+              alt="Camera 1 (Without AI)"
               className="max-w-full rounded shadow"
             />
           ) : (

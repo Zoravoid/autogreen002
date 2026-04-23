@@ -1,4 +1,4 @@
-import os
+"""import os
 import cv2
 import torch 
 from kafka import KafkaConsumer
@@ -106,4 +106,112 @@ for msg in frame_consumer:
 
     _, jpeg_annotated = cv2.imencode('.jpg', annotated)
     send_frame(output_topic, jpeg_annotated.tobytes())
+    print(f"Published detections to {output_topic}")"""
+
+import cv2
+import torch
+import numpy as np
+from kafka import KafkaConsumer
+from ultralytics import YOLO
+from ai_kafka_producer import send_frame
+
+# -----------------------------
+# Model initialization
+# -----------------------------
+MODEL_PATH = "./models/GigaChadAI_Marius.pt"
+DEVICE = 0  # CUDA device
+
+model = YOLO(MODEL_PATH)
+model.to(DEVICE)
+
+# Warm-up (important for CUDA + streams)
+model.predict(
+    source=np.zeros((640, 640, 3), dtype=np.uint8),
+    device=DEVICE,
+    half=True,
+    verbose=False
+)
+
+# -----------------------------
+# Kafka configuration
+# -----------------------------
+INPUT_TOPICS = ["c_stream", "c_stream_2"]
+
+TOPIC_MAP = {
+    "c_stream": "c_detection",
+    "c_stream_2": "c_detection_2"
+}
+
+frame_consumer = KafkaConsumer(
+    *INPUT_TOPICS,
+    bootstrap_servers=["localhost:29092"],
+    auto_offset_reset="latest",
+    enable_auto_commit=True,
+    group_id="yolo-ai"
+)
+
+print("YOLO CUDA Consumer running...")
+
+# -----------------------------
+# Inference function (SAFE)
+# -----------------------------
+def infer(frame, conf=0.25, iou=0.45):
+    """
+    Ultralytics-managed inference.
+    Returns a Results object with correct class mapping.
+    """
+    results = model.predict(
+        source=frame,
+        device=DEVICE,
+        conf=conf,
+        iou=iou,
+        half=True,
+        verbose=False
+    )
+    return results[0]
+
+# -----------------------------
+# Main loop
+# -----------------------------
+for msg in frame_consumer:
+    input_topic = msg.topic
+    output_topic = TOPIC_MAP.get(input_topic)
+
+    np_img = np.frombuffer(msg.value, dtype=np.uint8)
+    frame = cv2.imdecode(np_img, cv2.IMREAD_COLOR)
+
+    if frame is None:
+        print(f"Failed to decode frame from {input_topic}")
+        continue
+
+    try:
+        result = infer(frame)
+    except Exception as e:
+        print("Inference error:", e)
+        continue
+
+    annotated = frame.copy()
+
+    for box in result.boxes:
+        x1, y1, x2, y2 = map(int, box.xyxy[0])
+        cls = int(box.cls[0])
+        conf = float(box.conf[0])
+
+        label = f"{result.names[cls]} {conf:.2f}"
+
+        cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        cv2.putText(
+            annotated,
+            label,
+            (x1, y1 - 5),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.5,
+            (0, 255, 0),
+            1,
+            cv2.LINE_AA
+        )
+
+    _, jpeg_annotated = cv2.imencode(".jpg", annotated)
+    send_frame(output_topic, jpeg_annotated.tobytes())
+
     print(f"Published detections to {output_topic}")

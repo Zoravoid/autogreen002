@@ -6,8 +6,8 @@ import Logo from "./_components/_navigation/logo";
 
 
 export const metadata: Metadata = {
-  title: "Automated Greenhouse",
-  description: "A project meant for creating an automated greenhouse",
+  title: "Calculia Analytics",
+  description: "A tool modified for IRT analytics",
 };
 
 export default function RootLayout({

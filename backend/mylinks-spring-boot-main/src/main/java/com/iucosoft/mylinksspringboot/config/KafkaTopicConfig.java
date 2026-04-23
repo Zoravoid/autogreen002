@@ -52,4 +52,10 @@ public class KafkaTopicConfig {
     @Bean
     public NewTopic cdetection2Topic() { return TopicBuilder.name("c_detection_2").build(); }
 
+    @Bean
+    public NewTopic sPlayerData() { return  TopicBuilder.name("s_player_data").build(); }
+
+    @Bean
+    public NewTopic bPlayerData() { return TopicBuilder.name("b_player_data").build(); }
+
 }

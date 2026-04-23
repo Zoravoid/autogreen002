@@ -8,28 +8,24 @@ export default function SensorData() {
   return (
     <main>
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-        Hello From Sensor Data Page!
+        Skill growth and difficulty evolution based on our implementation of the IRT 2PL model.
 
       <div className="grid xl:grid-cols-2 lg:grid-cols-2 w-full gap-10 max-w-[1400px]">
           
-        <GridItem title="Moisture in %">
-          <MoistureChart />
+        <GridItem title="Skill Evolution based on IRT 2PL model">
+          <HeatChart />
         </GridItem>
           
-        <GridItem title="Humidity in %">
+        <GridItem title="Difficulty Evolution based on IRT 2PL model">
           <HumidityChart />
         </GridItem>
 
-        <GridItem title="Temperature in °C">
-          <HeatChart />
+        <GridItem title="Skills per Player">
+          <MoistureChart />
         </GridItem>
 
-        <GridItem title="CO₂ in ppm">
+        <GridItem title="Results per Player">
           <Co2Chart />
-        </GridItem>
-
-        <GridItem title="Luminecense in Lux">
-          <LightChart />
         </GridItem>
 
       </div>

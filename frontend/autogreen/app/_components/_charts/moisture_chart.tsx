@@ -14,7 +14,7 @@ export default function MoistureChart() {
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
-  const MOISTURE_URL = `http://lilithvoid.local/backend/api/moisture/${deviceId}/moistures?page=${page}&size=${size}&sort=timeStamp,desc`;
+  const MOISTURE_URL = `http://lilithvoid:8080/api/level/${deviceId}/levels?page=${page}&size=${size}&sort=playerId,desc`;
 
   
 
@@ -41,7 +41,7 @@ export default function MoistureChart() {
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <div className='inputall'>
         <label className="flex flex-col text-sm font-semibold w-full">
-          Device ID
+          Level ID
           <input
             type="number"
             value={deviceId}
@@ -80,17 +80,15 @@ export default function MoistureChart() {
           margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time_stamp" reversed />
-          <YAxis dataKey="moisture_val" />
+          <XAxis dataKey="time_stamp" />
+          <YAxis />
           <Tooltip />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="moisture_val"
-            stroke="#323da1ff"
-            isAnimationActive={false}
-            activeDot={{ r: 8 }}
-          />
+          <Line type="monotone" dataKey="number_sense" stroke="rgb(184, 34, 34)" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="counting" stroke="#ec8805" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="arithmetic" stroke="#342fa5" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="visual_patterns" stroke="#8a7c05" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="memory" stroke="#009e6f" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>

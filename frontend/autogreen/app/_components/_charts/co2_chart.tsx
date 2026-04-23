@@ -14,9 +14,8 @@ export default function Co2Chart() {
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
-  const CO2_URL = `http://lilithvoid.local/backend/api/co2/${deviceId}/co2s?page=${page}&size=${size}&sort=timeStamp,desc`;
-
-
+  const CO2_URL = `http://lilithvoid:8080/api/level/${deviceId}/levels?page=${page}&size=${size}&sort=playerId,desc`;
+  const difficultyKey = `difficulty${deviceId}`;
 
   useEffect(() => {
     async function loadData() {
@@ -69,7 +68,7 @@ export default function Co2Chart() {
         <div className="flex flex-wrap gap-4 mb-4 justify-center">
           <div className='inputall'>
           <label className="flex flex-col text-sm font-semibold w-full">
-            Device ID
+            Level ID
             <input
               type="number"
               value={deviceId}
@@ -109,17 +108,13 @@ export default function Co2Chart() {
           margin={{ top: 5, right: 0, left: 0, bottom: 5 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time_stamp" reversed={true} />
-          <YAxis width="auto" dataKey="co2_val" />
+          <XAxis dataKey="time_stamp" />
+          <YAxis />
           <Tooltip />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="co2_val"
-            stroke="#979c49ff"
-            isAnimationActive={false}
-            activeDot={{ r: 8 }}
-          />
+          <Line type="monotone" dataKey={difficultyKey} stroke="#4e9760ff" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="prediction_probability" stroke="#a14343ff" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="result" stroke="#2921ca" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>

@@ -14,7 +14,7 @@ export default function HumidityChart() {
   const [deviceId, setDeviceId] = useState<number>(1);
   const [size, setSize] = useState<number>(10);
   const page = 0;
-  const HUMIDITY_URL = `http://lilithvoid.local/backend/api/humidity/${deviceId}/humidities?page=${page}&size=${size}&sort=timeStamp,desc`;
+  const HUMIDITY_URL = `http://lilithvoid:8080/api/player/${deviceId}/players?page=${page}&size=${size}&sort=timeStamp,desc`;
 
   
 
@@ -43,7 +43,7 @@ export default function HumidityChart() {
       <div className="flex flex-wrap gap-4 mb-4 justify-center">
         <div className='inputall'>
         <label className="flex flex-col text-sm font-semibold w-full">
-          Device ID
+          Player ID
           <input
             type="number"
             value={deviceId}
@@ -83,16 +83,11 @@ export default function HumidityChart() {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time_stamp" reversed />
-          <YAxis dataKey="humidity_val" />
+          <YAxis />
           <Tooltip />
           <Legend />
-          <Line
-            type="monotone"
-            dataKey="humidity_val"
-            stroke="#4e9760ff"
-            isAnimationActive={false}
-            activeDot={{ r: 8 }}
-          />
+          <Line type="monotone" dataKey="prediction_probability" stroke="#a14343ff" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="result" stroke="#2921ca" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>
