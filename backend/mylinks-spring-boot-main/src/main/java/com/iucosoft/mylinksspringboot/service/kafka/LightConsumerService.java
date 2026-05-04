@@ -10,7 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
+//@Component
 public class LightConsumerService {
 
     public final LightMapper lightMapper;
@@ -18,7 +18,7 @@ public class LightConsumerService {
     public final ObjectMapper objectMapper;
     public final LightProducerService lightProducerService;
 
-    @Autowired
+    //@Autowired
     public LightConsumerService(LightRepository lightRepository, LightMapper lightMapper, LightProducerService lightProducerService) {
         this.lightRepository = lightRepository;
         this.lightMapper = lightMapper;
@@ -26,8 +26,8 @@ public class LightConsumerService {
         this.objectMapper = new ObjectMapper();
     }
 
-    @Transactional
-    @KafkaListener(topics = "s_light", groupId = "javaSpring")
+    //@Transactional
+    //@KafkaListener(topics = "s_light", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

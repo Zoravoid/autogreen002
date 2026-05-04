@@ -5,7 +5,7 @@ import com.iucosoft.mylinksspringboot.dto.sensor.LightDTO;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class LightProducerService {
 
     public final KafkaTemplate<String, String> kafkaTemplate;

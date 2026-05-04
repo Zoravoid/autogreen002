@@ -115,6 +115,7 @@ export default function Co2Chart() {
           <Line type="monotone" dataKey={difficultyKey} stroke="#4e9760ff" isAnimationActive={false}/>
           <Line type="monotone" dataKey="prediction_probability" stroke="#a14343ff" isAnimationActive={false}/>
           <Line type="monotone" dataKey="result" stroke="#2921ca" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="player_id" stroke="#ca21a5" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>

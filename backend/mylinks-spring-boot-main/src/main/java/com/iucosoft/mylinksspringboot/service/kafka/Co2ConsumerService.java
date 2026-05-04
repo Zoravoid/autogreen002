@@ -10,7 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
+//@Component
 public class Co2ConsumerService {
 
     public final Co2Mapper co2Mapper;
@@ -18,7 +18,7 @@ public class Co2ConsumerService {
     public final ObjectMapper objectMapper;
     public final Co2ProducerService co2ProducerService;
 
-    @Autowired
+    //@Autowired
     public Co2ConsumerService(Co2Repository co2Repository, Co2Mapper co2Mapper, Co2ProducerService co2ProducerService) {
         this.co2Repository = co2Repository;
         this.co2Mapper = co2Mapper;
@@ -26,8 +26,8 @@ public class Co2ConsumerService {
         this.co2ProducerService = co2ProducerService;
     }
 
-    @Transactional
-    @KafkaListener(topics = "s_co2", groupId = "javaSpring")
+    //@Transactional
+    //@KafkaListener(topics = "s_co2", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

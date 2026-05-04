@@ -86,6 +86,7 @@ export default function HumidityChart() {
           <YAxis />
           <Tooltip />
           <Legend />
+          <Line type="monotone" dataKey="difficulty" stroke="#4e9760ff" isAnimationActive={false}/>
           <Line type="monotone" dataKey="prediction_probability" stroke="#a14343ff" isAnimationActive={false}/>
           <Line type="monotone" dataKey="result" stroke="#2921ca" isAnimationActive={false}/>
         </LineChart>

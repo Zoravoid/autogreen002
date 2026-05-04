@@ -5,7 +5,7 @@ import com.iucosoft.mylinksspringboot.dto.sensor.HeatDTO;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class HeatProducerService {
 
     public final KafkaTemplate<String, String> kafkaTemplate;

@@ -5,7 +5,7 @@ import com.iucosoft.mylinksspringboot.dto.sensor.Co2DTO;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Co2ProducerService {
 
     public final KafkaTemplate<String, String> kafkaTemplate;

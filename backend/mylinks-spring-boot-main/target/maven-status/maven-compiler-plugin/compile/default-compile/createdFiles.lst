@@ -162,6 +162,7 @@ com/iucosoft/mylinksspringboot/entities/Tag$TagBuilderImpl.class
 com/iucosoft/mylinksspringboot/entities/Moisture.class
 com/iucosoft/mylinksspringboot/mappers/HumidityMapperImpl.class
 com/iucosoft/mylinksspringboot/controllers/impl/DataApiImpl.class
+com/iucosoft/mylinksspringboot/mappers/custom/CustomPlayerMapper.class
 com/iucosoft/mylinksspringboot/repositories/UserRepository.class
 com/iucosoft/mylinksspringboot/service/PlayerService.class
 com/iucosoft/mylinksspringboot/repositories/bridge/LinkCategoryRepository.class
@@ -185,6 +186,7 @@ com/iucosoft/mylinksspringboot/entities/bridge/LinkTag.class
 com/iucosoft/mylinksspringboot/entities/bridge/GroupCategory$1.class
 com/iucosoft/mylinksspringboot/mappers/PlayerMapper.class
 com/iucosoft/mylinksspringboot/controllers/AuthenticationApi.class
+com/iucosoft/mylinksspringboot/mappers/custom/CustomPlayerMapperImpl.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserReceiver$NotificationUserReceiverBuilderImpl.class
 com/iucosoft/mylinksspringboot/service/impl/bridge/GroupLinkServiceImpl.class
 com/iucosoft/mylinksspringboot/service/CategoryService.class
@@ -262,6 +264,7 @@ com/iucosoft/mylinksspringboot/repositories/bridge/LinkTagRepository.class
 com/iucosoft/mylinksspringboot/entities/bridge/RoleUser.class
 com/iucosoft/mylinksspringboot/entities/User$UserBuilder.class
 com/iucosoft/mylinksspringboot/mappers/LinkMapperImpl.class
+com/iucosoft/mylinksspringboot/dto/calculia/PlayerCreateDTO.class
 com/iucosoft/mylinksspringboot/dto/personDetails/PersonDetailsDTOCreate.class
 com/iucosoft/mylinksspringboot/repositories/bridge/PermissionRoleRepository.class
 com/iucosoft/mylinksspringboot/controllers/RoleApi.class
@@ -332,6 +335,7 @@ com/iucosoft/mylinksspringboot/service/impl/TagServiceImpl.class
 com/iucosoft/mylinksspringboot/controllers/Co2Api.class
 com/iucosoft/mylinksspringboot/entities/PersonDetails$PersonDetailsBuilder.class
 com/iucosoft/mylinksspringboot/entities/bridge/NotificationUserSender.class
+com/iucosoft/mylinksspringboot/dto/calculia/PlayerCreateDTO$PlayerCreateDTOBuilder.class
 com/iucosoft/mylinksspringboot/entities/bridge/LinkCategory$LinkCategoryBuilderImpl.class
 com/iucosoft/mylinksspringboot/exceptions/GlobalExceptionHandler.class
 com/iucosoft/mylinksspringboot/exceptions/BadRequestException.class

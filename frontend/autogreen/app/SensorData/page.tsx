@@ -20,11 +20,11 @@ export default function SensorData() {
           <HumidityChart />
         </GridItem>
 
-        <GridItem title="Skills per Player">
+        <GridItem title="Skills per Level">
           <MoistureChart />
         </GridItem>
 
-        <GridItem title="Results per Player">
+        <GridItem title="Results per Level">
           <Co2Chart />
         </GridItem>
 

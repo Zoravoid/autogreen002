@@ -10,7 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
+//@Component
 public class MoistureConsumerService {
 
     public final MoistureMapper moistureMapper;
@@ -18,7 +18,7 @@ public class MoistureConsumerService {
     public final ObjectMapper objectMapper;
     private final MoistureProducerService moistureProducerService;
 
-    @Autowired
+    //@Autowired
     public MoistureConsumerService(MoistureRepository moistureRepository, MoistureMapper moistureMapper, MoistureProducerService moistureProducerService) {
         this.moistureRepository = moistureRepository;
         this.moistureMapper = moistureMapper;
@@ -26,8 +26,8 @@ public class MoistureConsumerService {
         this.moistureProducerService = moistureProducerService;
     }
 
-    @Transactional
-    @KafkaListener(topics = "s_moisture", groupId = "javaSpring")
+    //@Transactional
+    //@KafkaListener(topics = "s_moisture", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

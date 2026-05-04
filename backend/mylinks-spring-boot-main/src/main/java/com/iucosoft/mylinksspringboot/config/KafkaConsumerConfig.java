@@ -19,10 +19,10 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
+//@Configuration
 public class KafkaConsumerConfig {
 
-    @Value("${spring.kafka.bootstrap-servers}")
+    //@Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
     public Map<String, Object> consumerConfig() {
@@ -35,14 +35,14 @@ public class KafkaConsumerConfig {
 
     //Consumer Configuration for the Moisture Sensor
 
-    @Bean
+    //@Bean
     public ConsumerFactory<String, Moisture> moistureConsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig(),
                 new StringDeserializer(),
                 new JsonDeserializer<>(Moisture.class));
     }
 
-    @Bean
+    //@Bean
     public ConcurrentKafkaListenerContainerFactory<String, Moisture> moistureKafkaListenerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Moisture> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(moistureConsumerFactory());
@@ -51,14 +51,14 @@ public class KafkaConsumerConfig {
 
     //Consumer Configuration for the Heat Sensor
 
-    @Bean
+    //@Bean
     public ConsumerFactory<String, Heat> heatConsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig(),
                 new StringDeserializer(),
                 new JsonDeserializer<>(Heat.class));
     }
 
-    @Bean
+    //@Bean
     public ConcurrentKafkaListenerContainerFactory<String, Heat> heatKafkaListenerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Heat> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(heatConsumerFactory());
@@ -67,14 +67,14 @@ public class KafkaConsumerConfig {
 
     //Consumer Configuration for the Humidity Sensor
 
-    @Bean
+    //@Bean
     public ConsumerFactory<String, Humidity> humidityConsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig(),
         new StringDeserializer(),
         new JsonDeserializer<>(Humidity.class));
     }
 
-    @Bean
+    //@Bean
     public ConcurrentKafkaListenerContainerFactory<String, Humidity> humidityKafkaListenerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Humidity> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(humidityConsumerFactory());
@@ -83,14 +83,14 @@ public class KafkaConsumerConfig {
 
     //Consumer Configuration for the Co2 Sensor
 
-    @Bean
+    //@Bean
     public ConsumerFactory<String, Co2> co2ConsumerFactory() {
         return new DefaultKafkaConsumerFactory<>(consumerConfig(),
         new StringDeserializer(),
         new JsonDeserializer<>(Co2.class));
     }
 
-    @Bean
+    //@Bean
     public ConcurrentKafkaListenerContainerFactory<String, Co2> co2KafkaListenerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Co2> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(co2ConsumerFactory());

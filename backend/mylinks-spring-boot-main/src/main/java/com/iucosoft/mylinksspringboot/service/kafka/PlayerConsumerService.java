@@ -10,7 +10,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component
+//@Component
 public class PlayerConsumerService {
 
     public final PlayerMapper playerMapper;
@@ -18,7 +18,7 @@ public class PlayerConsumerService {
     public final ObjectMapper objectMapper;
     public final PlayerProducerService playerProducerService;
 
-    @Autowired
+    //@Autowired
     public PlayerConsumerService(PlayerRepository playerRepository, PlayerMapper playerMapper, PlayerProducerService playerProducerService) {
         this.playerRepository = playerRepository;
         this.playerMapper = playerMapper;
@@ -26,8 +26,8 @@ public class PlayerConsumerService {
         this.playerProducerService = playerProducerService;
     }
 
-    @Transactional
-    @KafkaListener(topics = "s_player_data", groupId = "javaSpring")
+    //@Transactional
+    //@KafkaListener(topics = "s_player_data", groupId = "javaSpring")
     public void consume(String message) {
         if (message == null || message.trim().isEmpty()) {
             System.out.println("Received empty message, skipping...");

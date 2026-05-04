@@ -77,6 +77,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/CategoryService.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/config/WebMvcConfigure.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/bridge/LinkOwnerService.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/calculia/PlayerCreateDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/util/UserStatusUtil.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/CategoryServiceImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/exceptions/UserAlreadyExistException.java
@@ -180,6 +181,7 @@
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/NotificationDTO.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/repositories/NotificationRepository.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/entities/Visibility.java
+/home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/custom/CustomPlayerMapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/service/impl/bridge/LinkCategoryServiceImpl.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/mappers/Co2Mapper.java
 /home/lili/Documents/Software_Projects/Expertes_in_Teams/autogreen/backend/mylinks-spring-boot-main/src/main/java/com/iucosoft/mylinksspringboot/dto/sensor/HeatDTO.java

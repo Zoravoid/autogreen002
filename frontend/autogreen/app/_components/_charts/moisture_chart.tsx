@@ -89,6 +89,7 @@ export default function MoistureChart() {
           <Line type="monotone" dataKey="arithmetic" stroke="#342fa5" isAnimationActive={false}/>
           <Line type="monotone" dataKey="visual_patterns" stroke="#8a7c05" isAnimationActive={false}/>
           <Line type="monotone" dataKey="memory" stroke="#009e6f" isAnimationActive={false}/>
+          <Line type="monotone" dataKey="player_id" stroke="#ca21a5" isAnimationActive={false}/>
         </LineChart>
       )}
     </div>

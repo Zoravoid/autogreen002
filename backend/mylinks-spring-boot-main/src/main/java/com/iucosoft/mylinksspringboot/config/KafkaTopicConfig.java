@@ -5,57 +5,57 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 
-@Configuration
+//@Configuration
 public class KafkaTopicConfig {
 
-    @Bean
+    //@Bean
     public NewTopic bMoistureTopic() {
         return TopicBuilder.name("b_moisture").build();
     }
 
-    @Bean
+    //@Bean
     public NewTopic bHeatTopic() { return TopicBuilder.name("b_heat").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic bHumidityTopic() { return TopicBuilder.name("b_humidity").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic bCo2Topic() { return TopicBuilder.name("b_co2").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic bLightTopic() { return TopicBuilder.name("b_light").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sMoistureTopic() { return TopicBuilder.name("s_moisture").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sHeatTopic() { return TopicBuilder.name("s_heat").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sHumidityTopic() { return TopicBuilder.name("s_humidity").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sCo2Topic() { return TopicBuilder.name("s_co2").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sLightTopic() { return TopicBuilder.name("s_light").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic cStreamTopic() { return TopicBuilder.name("c_stream").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic cStream2Topic() { return TopicBuilder.name("c_stream_2").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic cdetectionTopic() { return TopicBuilder.name("c_detection").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic cdetection2Topic() { return TopicBuilder.name("c_detection_2").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic sPlayerData() { return  TopicBuilder.name("s_player_data").build(); }
 
-    @Bean
+    //@Bean
     public NewTopic bPlayerData() { return TopicBuilder.name("b_player_data").build(); }
 
 }
